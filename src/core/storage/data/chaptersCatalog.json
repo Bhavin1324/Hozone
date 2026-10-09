@@ -4,265 +4,258 @@
     "name": "Mind",
     "displayOrder": 1,
     "icon": "Brain",
-    "rubricCount": 9
+    "rubricCount": 5939
   },
   {
     "id": "chap-vertigo",
     "name": "Vertigo",
     "displayOrder": 2,
     "icon": "RotateCw",
-    "rubricCount": 2
+    "rubricCount": 514
   },
   {
     "id": "chap-head",
     "name": "Head",
     "displayOrder": 3,
     "icon": "Smile",
-    "rubricCount": 3
+    "rubricCount": 6988
   },
   {
     "id": "chap-eye",
     "name": "Eye",
     "displayOrder": 4,
     "icon": "Eye",
-    "rubricCount": 1
+    "rubricCount": 1793
   },
   {
     "id": "chap-vision",
     "name": "Vision",
     "displayOrder": 5,
     "icon": "Sparkles",
-    "rubricCount": 1
+    "rubricCount": 1098
   },
   {
     "id": "chap-ear",
     "name": "Ear",
     "displayOrder": 6,
     "icon": "Activity",
-    "rubricCount": 1
+    "rubricCount": 2030
   },
   {
     "id": "chap-hearing",
     "name": "Hearing",
     "displayOrder": 7,
     "icon": "Zap",
-    "rubricCount": 0
+    "rubricCount": 168
   },
   {
     "id": "chap-nose",
     "name": "Nose & Coryza",
     "displayOrder": 8,
     "icon": "Compass",
-    "rubricCount": 1
+    "rubricCount": 1498
   },
   {
     "id": "chap-face",
     "name": "Face",
     "displayOrder": 9,
     "icon": "SmilePlus",
-    "rubricCount": 1
+    "rubricCount": 2096
   },
   {
     "id": "chap-mouth",
     "name": "Mouth & Tongue",
     "displayOrder": 10,
     "icon": "MessageSquare",
-    "rubricCount": 1
-  },
-  {
-    "id": "chap-taste",
-    "name": "Taste",
-    "displayOrder": 11,
-    "icon": "Utensils",
-    "rubricCount": 0
+    "rubricCount": 1599
   },
   {
     "id": "chap-teeth",
     "name": "Teeth & Gums",
-    "displayOrder": 12,
+    "displayOrder": 11,
     "icon": "Shield",
-    "rubricCount": 0
+    "rubricCount": 839
   },
   {
     "id": "chap-throat",
     "name": "Throat (Internal)",
-    "displayOrder": 13,
+    "displayOrder": 12,
     "icon": "Activity",
-    "rubricCount": 1
+    "rubricCount": 1048
   },
   {
     "id": "chap-external-throat",
     "name": "External Throat & Neck",
-    "displayOrder": 14,
+    "displayOrder": 13,
     "icon": "Layers",
-    "rubricCount": 0
+    "rubricCount": 276
   },
   {
     "id": "chap-stomach",
     "name": "Stomach",
-    "displayOrder": 15,
+    "displayOrder": 14,
     "icon": "Utensils",
-    "rubricCount": 3
+    "rubricCount": 2829
   },
   {
     "id": "chap-abdomen",
     "name": "Abdomen",
-    "displayOrder": 16,
+    "displayOrder": 15,
     "icon": "Activity",
-    "rubricCount": 3
+    "rubricCount": 4346
   },
   {
     "id": "chap-rectum",
     "name": "Rectum",
-    "displayOrder": 17,
+    "displayOrder": 16,
     "icon": "Activity",
-    "rubricCount": 1
+    "rubricCount": 1556
   },
   {
     "id": "chap-stool",
     "name": "Stool",
-    "displayOrder": 18,
+    "displayOrder": 17,
     "icon": "Droplets",
-    "rubricCount": 1
+    "rubricCount": 235
   },
   {
     "id": "chap-bladder",
     "name": "Bladder",
-    "displayOrder": 19,
+    "displayOrder": 18,
     "icon": "Droplets",
-    "rubricCount": 1
+    "rubricCount": 767
   },
   {
     "id": "chap-kidneys",
     "name": "Kidneys & Ureters",
-    "displayOrder": 20,
+    "displayOrder": 19,
     "icon": "Shield",
-    "rubricCount": 0
+    "rubricCount": 267
   },
   {
     "id": "chap-prostate",
     "name": "Prostate Gland",
-    "displayOrder": 21,
+    "displayOrder": 20,
     "icon": "Activity",
-    "rubricCount": 0
+    "rubricCount": 105
   },
   {
     "id": "chap-urethra",
     "name": "Urethra",
-    "displayOrder": 22,
+    "displayOrder": 21,
     "icon": "Activity",
-    "rubricCount": 0
+    "rubricCount": 606
   },
   {
     "id": "chap-urine",
     "name": "Urine",
-    "displayOrder": 23,
+    "displayOrder": 22,
     "icon": "Droplets",
-    "rubricCount": 1
+    "rubricCount": 407
   },
   {
     "id": "chap-genitalia-male",
     "name": "Genitalia Male",
-    "displayOrder": 24,
+    "displayOrder": 23,
     "icon": "Shield",
-    "rubricCount": 0
+    "rubricCount": 1122
   },
   {
     "id": "chap-genitalia-female",
     "name": "Genitalia Female",
-    "displayOrder": 25,
+    "displayOrder": 24,
     "icon": "Heart",
-    "rubricCount": 1
+    "rubricCount": 1486
   },
   {
     "id": "chap-larynx-trachea",
     "name": "Larynx & Trachea",
-    "displayOrder": 26,
+    "displayOrder": 25,
     "icon": "Wind",
-    "rubricCount": 0
+    "rubricCount": 729
   },
   {
     "id": "chap-respiration",
     "name": "Respiration",
-    "displayOrder": 27,
+    "displayOrder": 26,
     "icon": "Wind",
-    "rubricCount": 1
+    "rubricCount": 761
   },
   {
     "id": "chap-cough",
     "name": "Cough",
-    "displayOrder": 28,
+    "displayOrder": 27,
     "icon": "Wind",
-    "rubricCount": 1
+    "rubricCount": 1536
   },
   {
     "id": "chap-expectoration",
     "name": "Expectoration",
-    "displayOrder": 29,
+    "displayOrder": 28,
     "icon": "Droplets",
-    "rubricCount": 0
+    "rubricCount": 344
   },
   {
     "id": "chap-chest",
     "name": "Chest & Heart",
-    "displayOrder": 30,
+    "displayOrder": 29,
     "icon": "Heart",
-    "rubricCount": 1
+    "rubricCount": 4720
   },
   {
     "id": "chap-back",
     "name": "Back",
-    "displayOrder": 31,
+    "displayOrder": 30,
     "icon": "Activity",
-    "rubricCount": 1
+    "rubricCount": 4615
   },
   {
     "id": "chap-extremities",
     "name": "Extremities",
-    "displayOrder": 32,
+    "displayOrder": 31,
     "icon": "Activity",
-    "rubricCount": 2
+    "rubricCount": 16118
   },
   {
     "id": "chap-sleep-dreams",
     "name": "Sleep & Dreams",
-    "displayOrder": 33,
+    "displayOrder": 32,
     "icon": "Moon",
-    "rubricCount": 1
+    "rubricCount": 1589
   },
   {
     "id": "chap-chill",
     "name": "Chill & Ague",
-    "displayOrder": 34,
+    "displayOrder": 33,
     "icon": "Thermometer",
-    "rubricCount": 1
+    "rubricCount": 769
   },
   {
     "id": "chap-fever",
     "name": "Fever / Heat",
-    "displayOrder": 35,
+    "displayOrder": 34,
     "icon": "Flame",
-    "rubricCount": 0
+    "rubricCount": 599
   },
   {
     "id": "chap-perspiration",
     "name": "Perspiration",
-    "displayOrder": 36,
+    "displayOrder": 35,
     "icon": "Droplets",
-    "rubricCount": 1
+    "rubricCount": 396
   },
   {
     "id": "chap-skin",
     "name": "Skin",
-    "displayOrder": 37,
+    "displayOrder": 36,
     "icon": "Sparkles",
-    "rubricCount": 1
+    "rubricCount": 1164
   },
   {
     "id": "chap-generalities",
     "name": "Generalities",
-    "displayOrder": 38,
+    "displayOrder": 37,
     "icon": "Zap",
-    "rubricCount": 5
+    "rubricCount": 1762
   }
 ]

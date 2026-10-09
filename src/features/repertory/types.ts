@@ -119,6 +119,8 @@ export interface PolarSymptomPair {
   positiveRubricPath: string;
   oppositeRubricPath: string;
   clinicalNotes?: string;
+  positiveRubricId?: string;
+  oppositeRubricId?: string;
 }
 
 export interface PolarityRemedyResult {

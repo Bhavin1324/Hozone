@@ -1,0 +1,20 @@
+{
+  "version": "1.0.0",
+  "dbFile": "hozone_core_v1.db",
+  "gzFile": "hozone_core_v1.db.gz",
+  "sha256": "b4eba4d19a68d8b14aee40c4770220dca5f89916431c80395340ee175df74042",
+  "generatedAt": "2026-10-09T19:19:02.021Z",
+  "stats": {
+    "remedies": 5120,
+    "repertories": 44,
+    "chapters": 37,
+    "rubrics": 74714,
+    "rubricEntries": 734587,
+    "books": 132,
+    "monographs": 713,
+    "polarPairs": 6,
+    "uncompressedBytes": 183173120,
+    "compressedBytes": 29229813,
+    "compressionRatio": 0.16
+  }
+}

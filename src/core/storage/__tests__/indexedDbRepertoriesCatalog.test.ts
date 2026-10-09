@@ -44,7 +44,7 @@ describe('43+ Repertories & Hierarchical Rubric Catalog Storage (Phase C)', () =
     expect(modernReps.length).toBeGreaterThanOrEqual(6);
   });
 
-  it('hydrates and orders the complete 38 classical chapters', async () => {
+  it('hydrates and orders the complete 37 classical chapters', async () => {
     const chapters = await getLocalChapters();
     expect(chapters.length).toBeGreaterThanOrEqual(37);
 
@@ -59,7 +59,7 @@ describe('43+ Repertories & Hierarchical Rubric Catalog Storage (Phase C)', () =
 
     const gen = chapters.find((c) => c.id === 'chap-generalities');
     expect(gen).toBeDefined();
-    expect(gen?.displayOrder).toBe(38);
+    expect(gen?.displayOrder).toBe(37);
   });
 
   it('queries child sub-rubrics using parentId hierarchy index', async () => {

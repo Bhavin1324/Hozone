@@ -10,6 +10,13 @@ import type {
   ThermalState,
 } from '@/features/repertory/types';
 
+export interface SqliteSyncState {
+  status: 'uninitialized' | 'downloading' | 'decompressing' | 'mounting' | 'ready' | 'fallback';
+  progressPercent: number;
+  dbVersion: string;
+  error?: string;
+}
+
 export interface RepertorizationState {
   activeRubrics: ActiveCaseRubric[];
   filters: FilterCriteria;
@@ -23,6 +30,7 @@ export interface RepertorizationState {
   selectedRepertoryId: string;
   expandedRubricIds: string[];
   rubricViewMode: 'tree' | 'flat';
+  sqliteSync: SqliteSyncState;
 }
 
 const initialState: RepertorizationState = {
@@ -42,6 +50,11 @@ const initialState: RepertorizationState = {
   selectedRepertoryId: 'rep-kent',
   expandedRubricIds: ['rub-mind-anxiety', 'rub-mind-fear'],
   rubricViewMode: 'tree',
+  sqliteSync: {
+    status: 'uninitialized',
+    progressPercent: 0,
+    dbVersion: '1.0.0',
+  },
 };
 
 export const repertorizationSlice = createSlice({
@@ -198,6 +211,16 @@ export const repertorizationSlice = createSlice({
     setRubricViewMode: (state, action: PayloadAction<'tree' | 'flat'>) => {
       state.rubricViewMode = action.payload;
     },
+    setSqliteSyncProgress: (
+      state,
+      action: PayloadAction<{ status: SqliteSyncState['status']; progressPercent: number; error?: string }>
+    ) => {
+      state.sqliteSync.status = action.payload.status;
+      state.sqliteSync.progressPercent = action.payload.progressPercent;
+      if (action.payload.error !== undefined) {
+        state.sqliteSync.error = action.payload.error;
+      }
+    },
   },
 });
 
@@ -224,6 +247,7 @@ export const {
   toggleExpandRubric,
   setExpandedRubricIds,
   setRubricViewMode,
+  setSqliteSyncProgress,
 } = repertorizationSlice.actions;
 
 export default repertorizationSlice.reducer;

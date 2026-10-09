@@ -29,7 +29,10 @@ import {
   getLocalRemedies,
   searchLocalRubrics,
   getLocalPolarPairs,
+  getRubricsByIds,
+  getLocalRubricChildren,
 } from '@/core/storage/indexedDb';
+import { sqliteClient } from '@/core/workers/sqliteDatabaseClient';
 import { repertoryClient } from '@/core/workers/repertoryClient';
 import { mergeRubrics } from '@/core/repertory/rubricMerger';
 import { executePolarityAnalysis } from '@/core/repertory/polarityEngine';
@@ -44,6 +47,7 @@ import type {
   RepertoryCatalogItem,
 } from './types';
 import { RepertorySelector } from './components/RepertorySelector';
+import { DatabaseSyncIndicator } from './components/DatabaseSyncIndicator';
 import { ChapterSidebar } from './components/ChapterSidebar';
 import { RubricBrowser } from './components/RubricBrowser';
 import { RubricClipboard } from './components/RubricClipboard';
@@ -68,14 +72,15 @@ export const RepertoryContainer: React.FC = () => {
     selectedRepertoryId,
     expandedRubricIds,
     rubricViewMode,
+    sqliteSync,
   } = useAppSelector((state) => state.repertorization);
 
   const [repertories, setRepertories] = useState<RepertoryCatalogItem[]>([]);
   const [chapters, setChapters] = useState<Chapter[]>([]);
   const [remedies, setRemedies] = useState<Remedy[]>([]);
   const [rubrics, setRubrics] = useState<Rubric[]>([]);
-  const [allRubricsList, setAllRubricsList] = useState<Rubric[]>([]);
   const [polarPairs, setPolarPairs] = useState<PolarSymptomPair[]>([]);
+  const [polarRubrics, setPolarRubrics] = useState<Rubric[]>([]);
   const [computeOutput, setComputeOutput] = useState<RepertorizationComputeOutput>({
     rankedRemedies: [],
     benchmarkMs: 0,
@@ -85,18 +90,16 @@ export const RepertoryContainer: React.FC = () => {
 
   const debouncedSearch = useDebounce(searchQuery, 150);
 
-  // 1. Hydrate Repertories, Chapters, Remedies & Polar Pairs from Local-First Storage
+  // 1. Hydrate Repertories, Remedies & Polar Pairs from Local-First Storage
   useEffect(() => {
     let mounted = true;
     Promise.all([
       getLocalRepertories(),
-      getLocalChapters(),
       getLocalRemedies(),
       getLocalPolarPairs(),
-    ]).then(([reps, ch, rem, pp]) => {
+    ]).then(([reps, rem, pp]) => {
       if (mounted) {
         setRepertories(reps);
-        setChapters(ch);
         setRemedies(rem);
         setPolarPairs(pp);
       }
@@ -106,10 +109,23 @@ export const RepertoryContainer: React.FC = () => {
     };
   }, []);
 
-  // 2. Query Rubrics on Search / Chapter Change
+  // 2. Hydrate Chapters dynamically based on active repertory, search query, and SQLite readiness
   useEffect(() => {
     let mounted = true;
-    searchLocalRubrics(debouncedSearch, selectedChapterId || undefined).then((res) => {
+    getLocalChapters(selectedRepertoryId, debouncedSearch).then((ch) => {
+      if (mounted) {
+        setChapters(ch);
+      }
+    });
+    return () => {
+      mounted = false;
+    };
+  }, [selectedRepertoryId, debouncedSearch, sqliteSync.status]);
+
+  // 3. Query Rubrics on Search / Chapter Change / Repertory Change
+  useEffect(() => {
+    let mounted = true;
+    searchLocalRubrics(debouncedSearch, selectedChapterId || undefined, selectedRepertoryId).then((res) => {
       if (mounted) {
         setRubrics(res);
       }
@@ -117,63 +133,106 @@ export const RepertoryContainer: React.FC = () => {
     return () => {
       mounted = false;
     };
-  }, [debouncedSearch, selectedChapterId]);
+  }, [debouncedSearch, selectedChapterId, selectedRepertoryId, sqliteSync.status]);
 
-  // 3. Keep cache of all rubrics for matrix calculation
+  // 4. Preload polar pair rubrics to support instant Polarity Analysis
   useEffect(() => {
-    let mounted = true;
-    searchLocalRubrics('').then((all) => {
-      if (mounted) {
-        setAllRubricsList(all);
-      }
-    });
-    return () => {
-      mounted = false;
-    };
-  }, []);
+    if (polarPairs.length === 0) return;
+    const polarIds: string[] = [];
+    for (const p of polarPairs) {
+      if (p.positiveRubricId) polarIds.push(p.positiveRubricId);
+      if (p.oppositeRubricId) polarIds.push(p.oppositeRubricId);
+    }
+    if (polarIds.length > 0) {
+      let mounted = true;
+      getRubricsByIds(polarIds).then((rubs) => {
+        if (mounted) setPolarRubrics(rubs);
+      });
+      return () => {
+        mounted = false;
+      };
+    }
+  }, [polarPairs, sqliteSync.status]);
 
-  // Effective rubrics list combining base rubrics and active synthetic combined rubrics
-  const effectiveRubricsList = useMemo(() => {
-    const combined = Object.values(combinedRubricsMap);
-    return [...allRubricsList, ...combined];
-  }, [allRubricsList, combinedRubricsMap]);
-
-  // 4. Dispatch Matrix Calculation to Web Worker
+  // 5. Dispatch Matrix Calculation directly to SQLite Web Worker (with fallback)
   useEffect(() => {
-    if (remedies.length === 0 || effectiveRubricsList.length === 0) return;
+    if (remedies.length === 0 || activeRubrics.length === 0) {
+      return;
+    }
 
     let isCurrent = true;
-    repertoryClient
-      .compute({
-        activeRubrics,
-        allRubrics: effectiveRubricsList,
-        allRemedies: remedies,
-        filters,
-        scoringModel,
-      })
-      .then((output) => {
-        if (isCurrent) {
-          setComputeOutput(output);
-        }
-      });
+
+    if (sqliteClient.isReady()) {
+      sqliteClient
+        .executeRepertorization({
+          activeRubrics,
+          filters,
+          scoringModel,
+          combinedRubrics: Object.values(combinedRubricsMap),
+        })
+        .then((output) => {
+          if (isCurrent) {
+            setComputeOutput(output);
+          }
+        })
+        .catch((err) => {
+          console.warn('[RepertoryContainer] SQLite execution error, falling back to in-memory:', err);
+        });
+    } else {
+      repertoryClient
+        .compute({
+          activeRubrics,
+          allRubrics: [...rubrics, ...polarRubrics, ...Object.values(combinedRubricsMap)],
+          allRemedies: remedies,
+          filters,
+          scoringModel,
+        })
+        .then((output) => {
+          if (isCurrent) {
+            setComputeOutput(output);
+          }
+        });
+    }
 
     return () => {
       isCurrent = false;
     };
-  }, [activeRubrics, effectiveRubricsList, remedies, filters, scoringModel]);
+  }, [
+    activeRubrics,
+    combinedRubricsMap,
+    remedies,
+    rubrics,
+    polarRubrics,
+    filters,
+    scoringModel,
+    sqliteSync.status,
+  ]);
 
-  // 5. Compute Boenninghausen Polarity Analysis
+  const effectiveComputeOutput = useMemo(() => {
+    if (remedies.length === 0 || activeRubrics.length === 0) {
+      return {
+        rankedRemedies: [],
+        benchmarkMs: 0,
+        totalEvaluated: remedies.length,
+        qualifyingCount: 0,
+      };
+    }
+    return computeOutput;
+  }, [computeOutput, remedies.length, activeRubrics.length]);
+
+  // 6. Compute Boenninghausen Polarity Analysis
   const polarityOutput = useMemo<PolarityAnalysisComputeOutput>(() => {
     if (polarPairs.length === 0 || activeRubrics.length === 0 || remedies.length === 0) {
       return { rankedRemedies: [], evaluatedPairCount: 0, benchmarkMs: 0 };
     }
+    const allAvailableRubrics = [...rubrics, ...polarRubrics, ...Object.values(combinedRubricsMap)];
     return executePolarityAnalysis({
       activeRubrics,
       polarPairs,
-      allRubrics: effectiveRubricsList,
+      allRubrics: allAvailableRubrics,
       candidateRemedies: remedies,
     });
-  }, [activeRubrics, polarPairs, effectiveRubricsList, remedies]);
+  }, [activeRubrics, polarPairs, rubrics, polarRubrics, combinedRubricsMap, remedies]);
 
   const activeRubricIds = useMemo(
     () => new Set(activeRubrics.map((r) => r.rubricId)),
@@ -197,19 +256,26 @@ export const RepertoryContainer: React.FC = () => {
   );
 
   const handleCombineSelected = useCallback(
-    (strategy: MergeStrategy) => {
-      const rubricsToMerge = effectiveRubricsList.filter((r) =>
-        selectedClipboardIds.includes(r.id)
-      );
-      if (rubricsToMerge.length < 2) {
+    async (strategy: MergeStrategy) => {
+      if (selectedClipboardIds.length < 2) {
         message.warning('Please select at least 2 rubrics to combine.');
         return;
       }
-      const combined = mergeRubrics(rubricsToMerge, { strategy });
-      dispatch(combineSelectedRubrics({ combinedRubric: combined }));
-      message.success(`Combined ${rubricsToMerge.length} rubrics into single clinical symptom.`);
+      try {
+        const rubricsToMerge = await getRubricsByIds(selectedClipboardIds);
+        if (rubricsToMerge.length < 2) {
+          message.warning('Please select at least 2 rubrics to combine.');
+          return;
+        }
+        const combined = mergeRubrics(rubricsToMerge, { strategy });
+        dispatch(combineSelectedRubrics({ combinedRubric: combined }));
+        message.success(`Combined ${rubricsToMerge.length} rubrics into single clinical symptom.`);
+      } catch (err) {
+        console.error('[RepertoryContainer] Error combining rubrics:', err);
+        message.error('Failed to combine rubrics.');
+      }
     },
-    [effectiveRubricsList, selectedClipboardIds, dispatch]
+    [selectedClipboardIds, dispatch]
   );
 
   const handleUncombineRubric = useCallback(
@@ -217,11 +283,11 @@ export const RepertoryContainer: React.FC = () => {
       const combined = combinedRubricsMap[combinedRubricId];
       if (!combined) return;
       const restored = combined.sourceRubricIds.map((id) => {
-        const orig = allRubricsList.find((r) => r.id === id);
+        const orig = rubrics.find((r) => r.id === id);
         return {
           rubricId: id,
           fullPath: orig?.fullPath || id,
-          chapterName: orig?.chapterName || 'General',
+          chapterName: orig?.chapterName || combined.chapterName,
           weight: 1 as const,
           isEliminating: false,
         };
@@ -229,7 +295,7 @@ export const RepertoryContainer: React.FC = () => {
       dispatch(uncombineRubric({ combinedRubricId, restoredRubrics: restored }));
       message.success('Restored individual rubrics to case clipboard.');
     },
-    [combinedRubricsMap, allRubricsList, dispatch]
+    [combinedRubricsMap, rubrics, dispatch]
   );
 
   const handleSelectCrossReference = useCallback(
@@ -240,6 +306,32 @@ export const RepertoryContainer: React.FC = () => {
     [dispatch]
   );
 
+  const handleToggleExpandRubric = useCallback(
+    async (rubricId: string) => {
+      const willExpand = !expandedRubricIds.includes(rubricId);
+      dispatch(toggleExpandRubric(rubricId));
+
+      if (willExpand) {
+        const hasLoadedChildren = rubrics.some((r) => r.parentId === rubricId);
+        if (!hasLoadedChildren) {
+          try {
+            const children = await getLocalRubricChildren(rubricId);
+            if (children.length > 0) {
+              setRubrics((prev) => {
+                const existingIds = new Set(prev.map((r) => r.id));
+                const newChildren = children.filter((c) => !existingIds.has(c.id));
+                return newChildren.length > 0 ? [...prev, ...newChildren] : prev;
+              });
+            }
+          } catch (err) {
+            console.warn('[handleToggleExpandRubric] Error loading children:', err);
+          }
+        }
+      }
+    },
+    [dispatch, expandedRubricIds, rubrics]
+  );
+
   return (
     <div className="space-y-6">
       {/* 43+ Repertories Header Selector */}
@@ -247,6 +339,7 @@ export const RepertoryContainer: React.FC = () => {
         repertories={repertories}
         selectedRepertoryId={selectedRepertoryId}
         onSelectRepertory={(id) => dispatch(setSelectedRepertoryId(id))}
+        extra={<DatabaseSyncIndicator />}
       />
 
       {/* Top Split Workspace */}
@@ -257,6 +350,7 @@ export const RepertoryContainer: React.FC = () => {
             chapters={chapters}
             selectedChapterId={selectedChapterId}
             onSelectChapter={(id) => dispatch(setSelectedChapterId(id))}
+            isSearchActive={Boolean(debouncedSearch.trim())}
           />
           <RubricBrowser
             rubrics={rubrics}
@@ -268,7 +362,7 @@ export const RepertoryContainer: React.FC = () => {
             viewMode={rubricViewMode}
             onViewModeChange={(m) => dispatch(setRubricViewMode(m))}
             expandedRubricIds={expandedRubricIds}
-            onToggleExpand={(id) => dispatch(toggleExpandRubric(id))}
+            onToggleExpand={handleToggleExpandRubric}
             onSelectCrossReference={handleSelectCrossReference}
           />
         </div>
@@ -290,9 +384,9 @@ export const RepertoryContainer: React.FC = () => {
           <FilterToolbar
             filters={filters}
             scoringModel={scoringModel}
-            benchmarkMs={computeOutput.benchmarkMs}
-            qualifyingCount={computeOutput.qualifyingCount}
-            totalEvaluated={computeOutput.totalEvaluated}
+            benchmarkMs={effectiveComputeOutput.benchmarkMs}
+            qualifyingCount={effectiveComputeOutput.qualifyingCount}
+            totalEvaluated={effectiveComputeOutput.totalEvaluated}
             onToggleThermal={(t) => dispatch(toggleThermalFilter(t))}
             onToggleMiasm={(m) => dispatch(toggleMiasmFilter(m))}
             onToggleKingdom={(k) => dispatch(toggleKingdomFilter(k))}
@@ -331,7 +425,7 @@ export const RepertoryContainer: React.FC = () => {
         />
       ) : (
         <RepertorizationGrid
-          rankedRemedies={computeOutput.rankedRemedies}
+          rankedRemedies={effectiveComputeOutput.rankedRemedies}
           activeRubrics={activeRubrics}
           onSelectRemedy={(id) => dispatch(setSelectedRemedyId(id))}
         />

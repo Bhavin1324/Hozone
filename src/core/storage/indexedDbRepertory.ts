@@ -1,5 +1,6 @@
 import { getDb } from './indexedDb';
 import { hydrateRemediesCatalog } from './indexedDbHydration';
+import { sqliteClient } from '../workers/sqliteDatabaseClient';
 import type {
   Chapter,
   Remedy,
@@ -38,10 +39,49 @@ export async function getLocalRepertoriesByCategory(
   return [];
 }
 
-export async function getLocalChapters(): Promise<Chapter[]> {
+export async function getLocalChapters(
+  repertoryId?: string,
+  searchQuery?: string
+): Promise<Chapter[]> {
+  if (sqliteClient.isReady()) {
+    try {
+      const live = await sqliteClient.getChapters(repertoryId, searchQuery);
+      if (live.length > 0) return live;
+    } catch (err) {
+      console.warn('[getLocalChapters] SQLite query failed, falling back to IndexedDB:', err);
+    }
+  }
   const db = await getDb();
   const list = await db.getAllFromIndex('chapters', 'byOrder');
-  return list.sort((a, b) => a.displayOrder - b.displayOrder);
+  const sorted = list.sort((a, b) => a.displayOrder - b.displayOrder);
+  let filtered = sorted;
+  if (repertoryId && repertoryId !== 'rep-kent') {
+    const scoped = sorted.filter((c) => !c.repertoryId || c.repertoryId === repertoryId);
+    if (scoped.length > 0) filtered = scoped;
+  }
+
+  const cleanQuery = (searchQuery || '').trim();
+  if (!cleanQuery) return filtered;
+
+  try {
+    const rubrics = await db.getAll('rubrics');
+    const q = cleanQuery.toLowerCase();
+    const hitsMap = new Map<string, number>();
+    for (const r of rubrics) {
+      if (
+        r.fullPath.toLowerCase().includes(q) ||
+        r.path.toLowerCase().includes(q)
+      ) {
+        hitsMap.set(r.chapterId, (hitsMap.get(r.chapterId) || 0) + 1);
+      }
+    }
+    return filtered.map((c) => ({
+      ...c,
+      rubricCount: hitsMap.get(c.id) || 0,
+    }));
+  } catch {
+    return filtered;
+  }
 }
 
 export async function getLocalRemedies(): Promise<Remedy[]> {
@@ -102,6 +142,15 @@ export async function getLocalRubricsByChapter(chapterId: string): Promise<Rubri
 }
 
 export async function getLocalRubricChildren(parentId: string): Promise<Rubric[]> {
+  if (sqliteClient.isReady()) {
+    try {
+      const res = await sqliteClient.getRubricChildren(parentId);
+      if (res && res.length > 0) return res;
+    } catch (err) {
+      console.warn('[getLocalRubricChildren] SQLite query failed, falling back to IndexedDB:', err);
+    }
+  }
+
   const db = await getDb();
   try {
     return await db.getAllFromIndex('rubrics', 'byParent', parentId);
@@ -113,8 +162,17 @@ export async function getLocalRubricChildren(parentId: string): Promise<Rubric[]
 
 export async function searchLocalRubrics(
   query: string,
-  chapterId?: string
+  chapterId?: string,
+  repertoryId?: string
 ): Promise<Rubric[]> {
+  if (sqliteClient.isReady()) {
+    try {
+      return await sqliteClient.searchRubrics(query, chapterId, repertoryId);
+    } catch (err) {
+      console.warn('[searchLocalRubrics] SQLite query failed, falling back to IndexedDB:', err);
+    }
+  }
+
   const db = await getDb();
   let rubrics: Rubric[];
 
@@ -122,6 +180,13 @@ export async function searchLocalRubrics(
     rubrics = await db.getAllFromIndex('rubrics', 'byChapter', chapterId);
   } else {
     rubrics = await db.getAll('rubrics');
+  }
+
+  if (repertoryId && repertoryId !== 'rep-kent') {
+    const scoped = rubrics.filter((r) => r.repertoryId === repertoryId);
+    if (scoped.length > 0) {
+      rubrics = scoped;
+    }
   }
 
   if (!query.trim()) {
@@ -134,3 +199,24 @@ export async function searchLocalRubrics(
     return terms.every((term) => target.includes(term));
   });
 }
+
+export async function getRubricsByIds(rubricIds: string[]): Promise<Rubric[]> {
+  if (rubricIds.length === 0) return [];
+  if (sqliteClient.isReady()) {
+    try {
+      const results = await sqliteClient.getRubricsByIds(rubricIds);
+      if (results.length > 0) return results;
+    } catch (err) {
+      console.warn('[getRubricsByIds] SQLite query failed, falling back to IndexedDB:', err);
+    }
+  }
+
+  const db = await getDb();
+  const list: Rubric[] = [];
+  for (const id of rubricIds) {
+    const r = await db.get('rubrics', id);
+    if (r) list.push(r);
+  }
+  return list;
+}
+

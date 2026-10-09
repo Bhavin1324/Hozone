@@ -18,6 +18,7 @@ import repertorizationReducer, {
   setSelectedRepertoryId,
   toggleExpandRubric,
   setRubricViewMode,
+  setSqliteSyncProgress,
 } from '../slices/repertorizationSlice';
 import { INITIAL_RUBRICS } from '@/core/storage/initialData';
 
@@ -192,5 +193,24 @@ describe('Repertorization Redux Slice', () => {
 
     state = repertorizationReducer(state, setRubricViewMode('tree'));
     expect(state.rubricViewMode).toBe('tree');
+  });
+
+  it('tracks SQLite offline database sync progress and readiness', () => {
+    expect(initial.sqliteSync.status).toBe('uninitialized');
+    expect(initial.sqliteSync.progressPercent).toBe(0);
+
+    let state = repertorizationReducer(
+      initial,
+      setSqliteSyncProgress({ status: 'downloading', progressPercent: 45 })
+    );
+    expect(state.sqliteSync.status).toBe('downloading');
+    expect(state.sqliteSync.progressPercent).toBe(45);
+
+    state = repertorizationReducer(
+      state,
+      setSqliteSyncProgress({ status: 'ready', progressPercent: 100 })
+    );
+    expect(state.sqliteSync.status).toBe('ready');
+    expect(state.sqliteSync.progressPercent).toBe(100);
   });
 });

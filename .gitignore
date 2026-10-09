@@ -24,3 +24,11 @@ dist-ssr
 *.sln
 *.sw?
 .temp
+
+# Large local SQLite compilation artifacts (uncompressed raw DB exceeds GitHub 100MB limit)
+public/data/*.db
+!public/data/*.db.gz
+
+# Local scratch and acquisition cache
+scratch/
+scripts/acquisition/cache/

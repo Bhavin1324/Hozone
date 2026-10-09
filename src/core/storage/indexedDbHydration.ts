@@ -70,9 +70,16 @@ export async function hydrateRepertoriesCatalog(db: IDBPDatabase<HozoneDbSchema>
   }
 
   const chCount = await db.count('chapters');
-  if (chCount < 30) {
+  const sampleChap = chCount > 0 ? await db.get('chapters', 'chap-mind') : null;
+  const needsChapRefresh =
+    chCount < 30 ||
+    (sampleChap && (sampleChap.rubricCount ?? 0) < 100) ||
+    chCount > 37;
+
+  if (needsChapRefresh) {
     const tx = db.transaction('chapters', 'readwrite');
     const store = tx.objectStore('chapters');
+    await store.clear();
     for (const c of chaptersCatalogData as Chapter[]) {
       store.put(c);
     }

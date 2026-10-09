@@ -50,7 +50,7 @@ describe('RepertorySelector Component (Phase C)', () => {
     expect(screen.getByText('1957')).toBeDefined();
   });
 
-  it('displays the 44 Repertories parity badge', () => {
+  it('displays the dynamic repertories count badge', () => {
     render(
       <RepertorySelector
         repertories={sampleRepertories}
@@ -59,6 +59,6 @@ describe('RepertorySelector Component (Phase C)', () => {
       />
     );
 
-    expect(screen.getByText('44 Repertories')).toBeDefined();
+    expect(screen.getByText(`${sampleRepertories.length} Repertories`)).toBeDefined();
   });
 });

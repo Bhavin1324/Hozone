@@ -1,4 +1,5 @@
 import { getDb } from './indexedDb';
+import { sqliteClient } from '../workers/sqliteDatabaseClient';
 import type {
   MateriaMedicaBook,
   RemedyMonograph,
@@ -16,6 +17,15 @@ export async function getLocalMonograph(
   remedyId: string,
   bookId?: string
 ): Promise<RemedyMonograph | undefined> {
+  if (sqliteClient.isReady()) {
+    try {
+      const mono = await sqliteClient.getMonograph(remedyId, bookId);
+      if (mono) return mono;
+    } catch (err) {
+      console.warn('[getLocalMonograph] SQLite query failed, falling back to IndexedDB:', err);
+    }
+  }
+
   const db = await getDb();
   if (bookId) {
     return db.getFromIndex('monographs', 'byRemedyAndBook', [remedyId, bookId]);

@@ -162,4 +162,69 @@ describe('Boenninghausen Polarity Analysis Engine (executePolarityAnalysis)', ()
     expect(output.rankedRemedies).toEqual([]);
     expect(output.evaluatedPairCount).toBe(0);
   });
+
+  it('evaluates canonical Kent rubrics matching via positiveRubricId and oppositeRubricId', () => {
+    const kentPair: PolarSymptomPair = {
+      id: 'pair-thermal-kent',
+      polarCode: 'POLAR_THERMAL_COLD_WARM',
+      name: 'Thermal Sensitivity',
+      category: 'Thermal',
+      positiveLabel: '< Cold in general',
+      oppositeLabel: '< Warmth',
+      positiveRubricPath: 'Generalities, cold, in general agg.',
+      oppositeRubricPath: 'Generalities, warm, agg.',
+      positiveRubricId: 'rub-kent-34541',
+      oppositeRubricId: 'rub-kent-36005',
+    };
+
+    const rubColdKent: Rubric = {
+      id: 'rub-kent-34541',
+      chapterId: 'chap-generalities',
+      chapterName: 'Generalities',
+      path: 'Generalities, cold, in general agg.',
+      fullPath: 'Generalities, cold, in general agg.',
+      depth: 1,
+      remedyCount: 2,
+      entries: [
+        { remedyId: 'rem-ars', abbreviation: 'Ars.', grade: 4 },
+        { remedyId: 'rem-puls', abbreviation: 'Puls.', grade: 1 },
+      ],
+    };
+
+    const rubWarmKent: Rubric = {
+      id: 'rub-kent-36005',
+      chapterId: 'chap-generalities',
+      chapterName: 'Generalities',
+      path: 'Generalities, warm, agg.',
+      fullPath: 'Generalities, warm, agg.',
+      depth: 1,
+      remedyCount: 1,
+      entries: [
+        { remedyId: 'rem-puls', abbreviation: 'Puls.', grade: 4 },
+      ],
+    };
+
+    const active: ActiveCaseRubric[] = [
+      {
+        rubricId: 'rub-kent-34541',
+        fullPath: 'Generalities, cold, in general agg.',
+        chapterName: 'Generalities',
+        weight: 1,
+        isEliminating: false,
+      },
+    ];
+
+    const output = executePolarityAnalysis({
+      activeRubrics: active,
+      polarPairs: [kentPair],
+      allRubrics: [rubColdKent, rubWarmKent],
+      candidateRemedies: remedies,
+    });
+
+    expect(output.evaluatedPairCount).toBe(1);
+    const ars = output.rankedRemedies.find((r) => r.remedy.id === 'rem-ars');
+    expect(ars?.polarityDifference).toBe(4);
+    const puls = output.rankedRemedies.find((r) => r.remedy.id === 'rem-puls');
+    expect(puls?.isContraindicated).toBe(true);
+  });
 });

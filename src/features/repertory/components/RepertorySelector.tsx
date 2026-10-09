@@ -7,6 +7,7 @@ interface RepertorySelectorProps {
   repertories: RepertoryCatalogItem[];
   selectedRepertoryId: string;
   onSelectRepertory: (id: string) => void;
+  extra?: React.ReactNode;
 }
 
 const CATEGORY_ORDER: RepertoryCategory[] = [
@@ -21,17 +22,19 @@ export const RepertorySelector: React.FC<RepertorySelectorProps> = ({
   repertories,
   selectedRepertoryId,
   onSelectRepertory,
+  extra,
 }) => {
   const currentRepertory = useMemo(() => {
     return (
       repertories.find((r) => r.id === selectedRepertoryId) ||
       repertories[0] || {
-        id: 'rep-kent',
-        title: "Kent's Repertory of the Homoeopathic Materia Medica",
-        author: 'Dr. James Tyler Kent',
-        editionYear: 1957,
+        id: selectedRepertoryId,
+        code: 'REP-ACTIVE',
+        title: 'Homoeopathic Repertory Catalog',
+        author: 'Classical Practitioners',
+        editionYear: new Date().getFullYear(),
         category: 'Master General & Classical' as const,
-        description: 'Standard classical repertory',
+        description: 'Comprehensive repertorization database',
       }
     );
   }, [repertories, selectedRepertoryId]);
@@ -86,7 +89,7 @@ export const RepertorySelector: React.FC<RepertorySelectorProps> = ({
 
       {/* Repertory Dropdown & Parity Badge */}
       <div className="flex items-center space-x-2.5 shrink-0">
-        <Tooltip title="Switch between 44 classical, regional, sensation, and modern repertories">
+        <Tooltip title={`Switch between ${repertories.length} classical, regional, sensation, and modern repertories`}>
           <div className="w-64 sm:w-80">
             <Select
               value={selectedRepertoryId}
@@ -100,9 +103,11 @@ export const RepertorySelector: React.FC<RepertorySelectorProps> = ({
           </div>
         </Tooltip>
 
+        {extra}
+
         <div className="hidden lg:flex items-center space-x-1.5 px-2.5 py-1 rounded-lg bg-surface-subtle border border-border-subtle text-xs text-text-secondary">
-          <ShieldCheck className="w-3.5 h-3.5 text-emerald-500" />
-          <span className="font-semibold text-[11px]">44 Repertories</span>
+          <ShieldCheck className="w-3.5 h-3.5 text-status-success" />
+          <span className="font-semibold text-[11px]">{repertories.length} Repertories</span>
         </div>
       </div>
     </div>

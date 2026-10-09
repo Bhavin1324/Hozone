@@ -73,9 +73,24 @@ export function executePolarityAnalysis(
       const normOpp = normalizePath(pair.oppositeRubricPath);
 
       // Check if patient has the positive pole
-      if (normActive.includes(normPos) || normPos.includes(normActive)) {
-        const indicatedRubric = rubricMapById.get(active.rubricId) || rubricMapByPath.get(normPos);
-        const contraindicatedRubric = rubricMapByPath.get(normOpp);
+      const isPositiveMatch =
+        (pair.positiveRubricId && active.rubricId === pair.positiveRubricId) ||
+        normActive.includes(normPos) ||
+        normPos.includes(normActive);
+
+      const isOppositeMatch =
+        (pair.oppositeRubricId && active.rubricId === pair.oppositeRubricId) ||
+        normActive.includes(normOpp) ||
+        normOpp.includes(normActive);
+
+      if (isPositiveMatch) {
+        const indicatedRubric =
+          rubricMapById.get(active.rubricId) ||
+          (pair.positiveRubricId ? rubricMapById.get(pair.positiveRubricId) : undefined) ||
+          rubricMapByPath.get(normPos);
+        const contraindicatedRubric =
+          (pair.oppositeRubricId ? rubricMapById.get(pair.oppositeRubricId) : undefined) ||
+          rubricMapByPath.get(normOpp);
 
         if (indicatedRubric) {
           activePairMatches.push({
@@ -86,11 +101,14 @@ export function executePolarityAnalysis(
             oppositeLabel: pair.oppositeLabel,
           });
         }
-      }
-      // Check if patient has the opposite pole
-      else if (normActive.includes(normOpp) || normOpp.includes(normActive)) {
-        const indicatedRubric = rubricMapById.get(active.rubricId) || rubricMapByPath.get(normOpp);
-        const contraindicatedRubric = rubricMapByPath.get(normPos);
+      } else if (isOppositeMatch) {
+        const indicatedRubric =
+          rubricMapById.get(active.rubricId) ||
+          (pair.oppositeRubricId ? rubricMapById.get(pair.oppositeRubricId) : undefined) ||
+          rubricMapByPath.get(normOpp);
+        const contraindicatedRubric =
+          (pair.positiveRubricId ? rubricMapById.get(pair.positiveRubricId) : undefined) ||
+          rubricMapByPath.get(normPos);
 
         if (indicatedRubric) {
           activePairMatches.push({

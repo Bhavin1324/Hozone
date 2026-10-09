@@ -64,7 +64,7 @@ export const HierarchicalRubricTree: React.FC<HierarchicalRubricTreeProps> = ({
   const renderNode = (node: TreeNode, level = 0): React.ReactNode => {
     const { rubric, children } = node;
     const isExpanded = expandedRubricIds.includes(rubric.id);
-    const hasChildren = children.length > 0;
+    const hasChildren = children.length > 0 || (rubric.depth !== undefined && rubric.depth < 3);
     const isAdded = activeRubricIds.has(rubric.id);
 
     return (
@@ -186,7 +186,13 @@ export const HierarchicalRubricTree: React.FC<HierarchicalRubricTreeProps> = ({
         {/* Recursive Children Rendering */}
         {hasChildren && isExpanded && (
           <div className="border-l-2 border-primary-500/20 ml-3 pl-1 mb-2">
-            {children.map((child) => renderNode(child, level + 1))}
+            {children.length > 0 ? (
+              children.map((child) => renderNode(child, level + 1))
+            ) : (
+              <div className="ml-4 py-1 text-[11px] text-text-muted italic">
+                Loading sub-rubrics...
+              </div>
+            )}
           </div>
         )}
       </div>

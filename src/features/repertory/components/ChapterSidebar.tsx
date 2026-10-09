@@ -29,6 +29,7 @@ interface ChapterSidebarProps {
   chapters: Chapter[];
   selectedChapterId: string | null;
   onSelectChapter: (chapterId: string | null) => void;
+  isSearchActive?: boolean;
 }
 
 const ICON_MAP: Record<string, React.FC<{ className?: string }>> = {
@@ -58,6 +59,7 @@ export const ChapterSidebar: React.FC<ChapterSidebarProps> = ({
   chapters,
   selectedChapterId,
   onSelectChapter,
+  isSearchActive = false,
 }) => {
   const [filterQuery, setFilterQuery] = useState('');
 
@@ -72,7 +74,7 @@ export const ChapterSidebar: React.FC<ChapterSidebarProps> = ({
       {/* Header with All button */}
       <div className="p-2.5 border-b border-border-subtle flex items-center justify-between">
         <span className="text-xs font-semibold text-text-muted uppercase tracking-wider">
-          Chapters ({chapters.length})
+          Chapters ({filteredChapters.length})
         </span>
         <button
           onClick={() => onSelectChapter(null)}
@@ -123,11 +125,21 @@ export const ChapterSidebar: React.FC<ChapterSidebarProps> = ({
                 />
                 <span className="truncate">{chap.name}</span>
               </div>
-              {chap.rubricCount !== undefined && chap.rubricCount > 0 && (
-                <span className="text-[10px] text-text-muted font-mono px-1 rounded bg-surface-subtle shrink-0">
-                  {chap.rubricCount}
+              {chap.rubricCount !== undefined && chap.rubricCount > 0 ? (
+                <span
+                  className={`text-[10px] font-mono px-1.5 py-0.5 rounded shrink-0 font-medium ${
+                    isSearchActive
+                      ? 'bg-primary-500/15 text-primary-600 dark:text-primary-400 font-bold border border-primary-500/20'
+                      : 'bg-surface-subtle text-text-muted'
+                  }`}
+                >
+                  {chap.rubricCount.toLocaleString()}
                 </span>
-              )}
+              ) : isSearchActive ? (
+                <span className="text-[10px] text-text-muted/40 font-mono px-1 shrink-0">
+                  0
+                </span>
+              ) : null}
             </button>
           );
         })}
