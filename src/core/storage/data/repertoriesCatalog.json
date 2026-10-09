@@ -1,0 +1,399 @@
+[
+  {
+    "id": "rep-kent",
+    "code": "KENT_CORE",
+    "title": "Kent's Repertory of the Homoeopathic Materia Medica",
+    "author": "Dr. James Tyler Kent",
+    "editionYear": 1957,
+    "category": "Master General & Classical",
+    "description": "Standard classical repertory taxonomy covering generalities, mind, and localized rubrics with 4-tier grading.",
+    "isDefault": true
+  },
+  {
+    "id": "rep-complete-2024",
+    "code": "COMPLETE_2024",
+    "title": "Complete Repertory 2024",
+    "author": "Dr. Roger van Zandvoort",
+    "editionYear": 2024,
+    "category": "Master General & Classical",
+    "description": "Most comprehensive contemporary repertory combining Kent, Bönninghausen, Boger, and modern clinical additions."
+  },
+  {
+    "id": "rep-synthesis",
+    "code": "SYNTHESIS_ED",
+    "title": "Synthesis Repertory (Edition 9.1)",
+    "author": "Dr. Frederik Schroyens",
+    "editionYear": 2009,
+    "category": "Master General & Classical",
+    "description": "Radical Repertory based on Kent with standardized symptoms, extensive author references, and modern provings."
+  },
+  {
+    "id": "rep-btpb",
+    "code": "BONN_BTPB",
+    "title": "Bönninghausen's Therapeutic Pocket Book (BTPB)",
+    "author": "Dr. Clemens von Bönninghausen",
+    "editionYear": 1846,
+    "category": "Master General & Classical",
+    "description": "The foundation of polarity analysis and symptom combination, featuring complete generalized modalities and concordances."
+  },
+  {
+    "id": "rep-bbcr",
+    "code": "BOGER_BBCR",
+    "title": "Boger-Bönninghausen's Characteristics & Repertory (BBCR)",
+    "author": "Dr. Cyrus Maxwell Boger",
+    "editionYear": 1905,
+    "category": "Master General & Classical",
+    "description": "Boger synthesis of Bönninghausen clinical data with anatomical regional affinity grading and pathogenetic times."
+  },
+  {
+    "id": "rep-boger-synoptic",
+    "code": "BOGER_SYNOPTIC",
+    "title": "Boger's Synoptic Key Repertory",
+    "author": "Dr. Cyrus Maxwell Boger",
+    "editionYear": 1931,
+    "category": "Master General & Classical",
+    "description": "Concise, high-yield repertorial index linking essential diagnostic modalities and tissue affinities directly to remedies."
+  },
+  {
+    "id": "rep-murphy",
+    "code": "MURPHY_MED_REP",
+    "title": "Murphy's Homoeopathic Medical Repertory (3rd Edition)",
+    "author": "Dr. Robin Murphy",
+    "editionYear": 2010,
+    "category": "Master General & Classical",
+    "description": "Modern alphabetical clinical repertory integrating modern pathology, clinical emergencies, and environmental toxins."
+  },
+  {
+    "id": "rep-phatak",
+    "code": "PHATAK_CONCISE",
+    "title": "Phatak's Concise Repertory of Homoeopathic Medicines",
+    "author": "Dr. S.R. Phatak",
+    "editionYear": 1977,
+    "category": "Master General & Classical",
+    "description": "Compact, clinically verified keynote repertory arranged alphabetically for rapid bedside differential diagnosis."
+  },
+  {
+    "id": "rep-boericke",
+    "code": "BOERICKE_CLINICAL",
+    "title": "Boericke's Clinical Repertory",
+    "author": "Dr. William Boericke & Oscar E. Boericke",
+    "editionYear": 1927,
+    "category": "Clinical & General Practice",
+    "description": "Authoritative clinical index appended to the Pocket Manual, focusing on organ affinities and pathogenetic indications."
+  },
+  {
+    "id": "rep-clarke",
+    "code": "CLARKE_CLINICAL",
+    "title": "Clarke's Clinical Repertory to the Dictionary of Materia Medica",
+    "author": "Dr. John Henry Clarke",
+    "editionYear": 1904,
+    "category": "Clinical & General Practice",
+    "description": "Companion repertory to Clarke Dictionary with clinical diseases, causation rubrics, and temperament temperings."
+  },
+  {
+    "id": "rep-knerr",
+    "code": "KNERR_HERING",
+    "title": "Knerr's Repertory of Hering's Guiding Symptoms",
+    "author": "Dr. Calvin B. Knerr",
+    "editionYear": 1896,
+    "category": "Clinical & General Practice",
+    "description": "Comprehensive symptom index of Constantine Hering 10-volume Guiding Symptoms of Our Materia Medica."
+  },
+  {
+    "id": "rep-lippe",
+    "code": "LIPPE_REP",
+    "title": "Lippe's Repertory of the More Characteristic Symptoms",
+    "author": "Dr. Constantine Lippe",
+    "editionYear": 1879,
+    "category": "Clinical & General Practice",
+    "description": "Classical characteristic symptom index predating Kent, emphasizing unambiguous modal indications."
+  },
+  {
+    "id": "rep-gentry",
+    "code": "GENTRY_CONCORDANCE",
+    "title": "Gentry's Concordance Repertory of the Materia Medica",
+    "author": "Dr. William D. Gentry",
+    "editionYear": 1890,
+    "category": "Clinical & General Practice",
+    "description": "Six-volume concordance index allowing symptom search by exact spoken phrase or physiological expression."
+  },
+  {
+    "id": "rep-shedd",
+    "code": "SHEDD_CLINICAL",
+    "title": "Shedd's Clinic Repertory",
+    "author": "Dr. Percy Watson Shedd",
+    "editionYear": 1908,
+    "category": "Clinical & General Practice",
+    "description": "Practical clinical manual organizing remedies by specific nosological diseases and functional syndromes."
+  },
+  {
+    "id": "rep-neatby",
+    "code": "NEATBY_CLINICAL",
+    "title": "Neatby & Stonham's Clinical Medicine Repertory",
+    "author": "Dr. Edwin A. Neatby & Dr. Thomas G. Stonham",
+    "editionYear": 1927,
+    "category": "Clinical & General Practice",
+    "description": "British clinical school repertory designed for hospital and outpatient differential diagnostics."
+  },
+  {
+    "id": "rep-hughes",
+    "code": "HUGHES_CYCLOPAEDIA",
+    "title": "Hughes' Repertory of the Cyclopaedia of Drug Pathogenesy",
+    "author": "Dr. Richard Hughes",
+    "editionYear": 1895,
+    "category": "Clinical & General Practice",
+    "description": "Strictly pathogenetic toxicological proving index eliminating unverified clinical hypotheses."
+  },
+  {
+    "id": "rep-burt",
+    "code": "BURT_CHARACTERISTIC",
+    "title": "Burt's Characteristic Materia Medica Repertory",
+    "author": "Dr. William H. Burt",
+    "editionYear": 1869,
+    "category": "Clinical & General Practice",
+    "description": "Physiological and pathological tissue affinity catalog linking remedy action to organ systems."
+  },
+  {
+    "id": "rep-guernsey",
+    "code": "GUERNSEY_DESIRES",
+    "title": "Guernsey's Desires and Aversions Key",
+    "author": "Dr. Henry N. Guernsey",
+    "editionYear": 1867,
+    "category": "Clinical & General Practice",
+    "description": "Keynote index prioritizing food and beverage cravings, aversions, and aggravation modalities."
+  },
+  {
+    "id": "rep-bell-diarrhoea",
+    "code": "BELL_DIARRHOEA",
+    "title": "Bell's Homoeopathic Therapeutics of Diarrhoea",
+    "author": "Dr. James B. Bell",
+    "editionYear": 1888,
+    "category": "Regional & Organ Therapeutics",
+    "description": "Definitive monograph and specialty repertory for acute and chronic gastrointestinal evacuations and dysentery."
+  },
+  {
+    "id": "rep-borland-pneumonia",
+    "code": "BORLAND_PNEUMONIA",
+    "title": "Borland's Pneumonias Specialty Repertory",
+    "author": "Dr. Douglas M. Borland",
+    "editionYear": 1939,
+    "category": "Regional & Organ Therapeutics",
+    "description": "Critical clinical guidance and stage-specific rubrics for acute croupous, lobar, and broncho-pneumonia."
+  },
+  {
+    "id": "rep-borland-children",
+    "code": "BORLAND_CHILDREN",
+    "title": "Borland's Children's Types & Clinical Repertory",
+    "author": "Dr. Douglas M. Borland",
+    "editionYear": 1940,
+    "category": "Regional & Organ Therapeutics",
+    "description": "Pediatric constitutional classifications and acute childhood ailments index."
+  },
+  {
+    "id": "rep-borland-digestive",
+    "code": "BORLAND_DIGESTIVE",
+    "title": "Borland's Digestive Regulative Symptoms",
+    "author": "Dr. Douglas M. Borland",
+    "editionYear": 1945,
+    "category": "Regional & Organ Therapeutics",
+    "description": "Gastroenterological complaints with emphasis on tongue coatings, appetite aberrations, and hepatic tension."
+  },
+  {
+    "id": "rep-minton-uterine",
+    "code": "MINTON_UTERINE",
+    "title": "Minton's Uterine Therapeutics & Repertory",
+    "author": "Dr. Henry Minton",
+    "editionYear": 1884,
+    "category": "Regional & Organ Therapeutics",
+    "description": "Exhaustive gynecological, obstetrical, and menstrual symptom repertory with uterine pain profiles."
+  },
+  {
+    "id": "rep-berridge-eye",
+    "code": "BERRIDGE_EYE",
+    "title": "Berridge's Complete Repertory on Diseases of the Eye",
+    "author": "Dr. Edward W. Berridge",
+    "editionYear": 1873,
+    "category": "Regional & Organ Therapeutics",
+    "description": "Ophthalmic repertory organizing symptoms of the cornea, iris, conjunctiva, lacrimal apparatus, and vision."
+  },
+  {
+    "id": "rep-allen-fevers",
+    "code": "ALLEN_FEVERS",
+    "title": "Allen's Therapeutics of Fevers & Repertory",
+    "author": "Dr. Henry C. Allen",
+    "editionYear": 1902,
+    "category": "Regional & Organ Therapeutics",
+    "description": "Pyretological repertory detailing chill, heat, sweat stages, apyrexia modalities, and typhoid states."
+  },
+  {
+    "id": "rep-underwood-headache",
+    "code": "UNDERWOOD_HEADACHE",
+    "title": "Underwood's Headache Repertory",
+    "author": "Dr. B.F. Underwood",
+    "editionYear": 1889,
+    "category": "Regional & Organ Therapeutics",
+    "description": "Localized cephalalgia index cross-referencing side, character of pain, and aggravating environmental causes."
+  },
+  {
+    "id": "rep-king-headache",
+    "code": "KING_HEADACHE",
+    "title": "King's Repertory of Headaches",
+    "author": "Dr. John C. King",
+    "editionYear": 1879,
+    "category": "Regional & Organ Therapeutics",
+    "description": "Clinical index for nervous, congestive, gastric, and catarrhal migraines."
+  },
+  {
+    "id": "rep-douglas-skin",
+    "code": "DOUGLAS_SKIN",
+    "title": "Douglas' Skin Diseases Repertory",
+    "author": "Dr. M.E. Douglas",
+    "editionYear": 1900,
+    "category": "Regional & Organ Therapeutics",
+    "description": "Dermatological repertory classifying vesicles, pustules, squamae, ulcers, and parasitic eruptions."
+  },
+  {
+    "id": "rep-cartier-respiratory",
+    "code": "CARTIER_RESPIRATORY",
+    "title": "Cartier's Respiratory Diseases Repertory",
+    "author": "Dr. François Cartier",
+    "editionYear": 1905,
+    "category": "Regional & Organ Therapeutics",
+    "description": "Pulmonary therapeutics classifying laryngeal spasms, asthma, bronchitis, and hemoptysis."
+  },
+  {
+    "id": "rep-morgan-urinary",
+    "code": "MORGAN_URINARY",
+    "title": "Morgan's Repertory of Urinary Organs",
+    "author": "Dr. William Morgan",
+    "editionYear": 1899,
+    "category": "Regional & Organ Therapeutics",
+    "description": "Renal, vesical, and urethral symptom directory for lithiasis, albuminuria, and dysuria."
+  },
+  {
+    "id": "rep-roberts-sensations",
+    "code": "ROBERTS_SENSATIONS",
+    "title": "Roberts' Sensations As If",
+    "author": "Dr. Herbert A. Roberts",
+    "editionYear": 1937,
+    "category": "Sensations, Causation & Modalities",
+    "description": "Master compilation of subjective sensations As If (burning, band around head, ice water drop) mapped to remedies."
+  },
+  {
+    "id": "rep-ward-sensations",
+    "code": "WARD_SENSATIONS",
+    "title": "Ward's Unabridged Dictionary of the Sensations As If",
+    "author": "Dr. James W. Ward",
+    "editionYear": 1939,
+    "category": "Sensations, Causation & Modalities",
+    "description": "Encyclopedic dictionary containing thousands of unusual sensory symptoms from the proving archives."
+  },
+  {
+    "id": "rep-boger-times",
+    "code": "BOGER_TIMES",
+    "title": "Boger's Times of the Remedies (Modality Repertory)",
+    "author": "Dr. Cyrus Maxwell Boger",
+    "editionYear": 1910,
+    "category": "Sensations, Causation & Modalities",
+    "description": "Chronological circadian repertory ordering symptoms strictly by hour of aggravation and periodicity."
+  },
+  {
+    "id": "rep-bonn-antipyorics",
+    "code": "BONN_ANTIPYORICS",
+    "title": "Bönninghausen's Repertory of Antipyorics & Causations",
+    "author": "Dr. Clemens von Bönninghausen",
+    "editionYear": 1843,
+    "category": "Sensations, Causation & Modalities",
+    "description": "Etiological repertory classifying illnesses arising from fright, grief, anger, injuries, and suppression."
+  },
+  {
+    "id": "rep-pulford-graphic",
+    "code": "PULFORD_GRAPHIC",
+    "title": "Pulford's Graphic Repertory of Homoeopathy",
+    "author": "Dr. Alfred Pulford",
+    "editionYear": 1930,
+    "category": "Sensations, Causation & Modalities",
+    "description": "Direct comparison tables of remedies exhibiting identical symptoms with diagnostic contra-indications."
+  },
+  {
+    "id": "rep-gallavardin-psychic",
+    "code": "GALLAVARDIN_PSYCHIC",
+    "title": "Gallavardin's Repertory of Psychic Phenomena & Character",
+    "author": "Dr. Jean-Pierre Gallavardin",
+    "editionYear": 1890,
+    "category": "Sensations, Causation & Modalities",
+    "description": "Pioneering repertory for character anomalies, emotional vices, passions, alcoholism, and mental traits."
+  },
+  {
+    "id": "rep-yingling-accoucheur",
+    "code": "YINGLING_ACCOUCHEUR",
+    "title": "Yingling's The Accoucheur's Emergency Manual",
+    "author": "Dr. W.A. Yingling",
+    "editionYear": 1895,
+    "category": "Sensations, Causation & Modalities",
+    "description": "Obstetrical emergency repertory for postpartum hemorrhage, dystocia, puerperal convulsions, and retained placenta."
+  },
+  {
+    "id": "rep-vithoulkas-compass",
+    "code": "VITHOULKAS_COMPASS",
+    "title": "Vithoulkas' Compass Clinical Repertory",
+    "author": "Dr. George Vithoulkas",
+    "editionYear": 2012,
+    "category": "Modern & Thematic Systems",
+    "description": "Weight-adjusted clinical repertory reflecting levels of health and essential keynotes of classical remedies."
+  },
+  {
+    "id": "rep-mirilli-thematic",
+    "code": "MIRILLI_THEMATIC",
+    "title": "Mirilli's Thematic Repertory",
+    "author": "Dr. G. Mirilli",
+    "editionYear": 1998,
+    "category": "Modern & Thematic Systems",
+    "description": "Modern repertory organizing rubrics by central philosophical themes (abandonment, control, betrayal, worthlessness)."
+  },
+  {
+    "id": "rep-scholten-elements",
+    "code": "SCHOLTEN_ELEMENTS",
+    "title": "Scholten's Elements & Minerals Repertory",
+    "author": "Dr. Jan Scholten",
+    "editionYear": 1996,
+    "category": "Modern & Thematic Systems",
+    "description": "Periodic table series (Hydrogen to Uranium) and stages (1 to 18) mapped to homeopathic symptom themes."
+  },
+  {
+    "id": "rep-sankaran-sensations",
+    "code": "SANKARAN_SENSATIONS",
+    "title": "Sankaran's Substance & Sensation Repertory",
+    "author": "Dr. Rajan Sankaran",
+    "editionYear": 2004,
+    "category": "Modern & Thematic Systems",
+    "description": "Vital sensation method linking plant families, mineral series, and animal kingdoms to core human sensations."
+  },
+  {
+    "id": "rep-macleod-vet",
+    "code": "MACLEOD_VET",
+    "title": "MacLeod's Veterinary Homeopathic Repertory",
+    "author": "Dr. George MacLeod",
+    "editionYear": 1983,
+    "category": "Modern & Thematic Systems",
+    "description": "Canine, feline, equine, bovine, and ovine symptom rubrics adapted for veterinary practice."
+  },
+  {
+    "id": "rep-day-vet",
+    "code": "DAY_VET",
+    "title": "Day's Clinical Veterinary Repertory",
+    "author": "Dr. Christopher Day",
+    "editionYear": 1995,
+    "category": "Modern & Thematic Systems",
+    "description": "Modern British veterinary repertory with posological guidelines and acute animal syndromes."
+  },
+  {
+    "id": "rep-pitcairn-vet",
+    "code": "PITCAIRN_VET",
+    "title": "Pitcairn's Animal Repertory",
+    "author": "Dr. Richard H. Pitcairn",
+    "editionYear": 2005,
+    "category": "Modern & Thematic Systems",
+    "description": "Holistic animal symptom directory connecting species behaviors to natural homeopathic remedies."
+  }
+]

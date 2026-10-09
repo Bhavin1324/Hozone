@@ -1,0 +1,2158 @@
+[
+  {
+    "id": "rub-mind-anxiety",
+    "chapterId": "chap-mind",
+    "chapterName": "Mind",
+    "parentId": null,
+    "path": "ANXIETY",
+    "fullPath": "MIND > ANXIETY",
+    "depth": 1,
+    "remedyCount": 12,
+    "crossReferences": [
+      "FEAR",
+      "RESTLESSNESS",
+      "ANGUISH"
+    ],
+    "entries": [
+      {
+        "remedyId": "rem-ars",
+        "abbreviation": "Ars.",
+        "grade": 4
+      },
+      {
+        "remedyId": "rem-acon",
+        "abbreviation": "Acon.",
+        "grade": 4
+      },
+      {
+        "remedyId": "rem-phos",
+        "abbreviation": "Phos.",
+        "grade": 3
+      },
+      {
+        "remedyId": "rem-calc",
+        "abbreviation": "Calc.",
+        "grade": 3
+      },
+      {
+        "remedyId": "rem-lyc",
+        "abbreviation": "Lyc.",
+        "grade": 3
+      },
+      {
+        "remedyId": "rem-sulph",
+        "abbreviation": "Sulph.",
+        "grade": 3
+      },
+      {
+        "remedyId": "rem-rhus-t",
+        "abbreviation": "Rhus-t.",
+        "grade": 3
+      },
+      {
+        "remedyId": "rem-nux-v",
+        "abbreviation": "Nux-v.",
+        "grade": 3
+      },
+      {
+        "remedyId": "rem-bell",
+        "abbreviation": "Bell.",
+        "grade": 2
+      },
+      {
+        "remedyId": "rem-puls",
+        "abbreviation": "Puls.",
+        "grade": 2
+      },
+      {
+        "remedyId": "rem-nat-m",
+        "abbreviation": "Nat-m.",
+        "grade": 2
+      },
+      {
+        "remedyId": "rem-sil",
+        "abbreviation": "Sil.",
+        "grade": 2
+      }
+    ]
+  },
+  {
+    "id": "rub-mind-anx-anticipation",
+    "chapterId": "chap-mind",
+    "chapterName": "Mind",
+    "parentId": "rub-mind-anxiety",
+    "path": "anticipation, from",
+    "fullPath": "MIND > ANXIETY > anticipation, from",
+    "depth": 2,
+    "remedyCount": 8,
+    "crossReferences": [
+      "TIMIDITY > appearing in public",
+      "CONFIDENCE > want of self"
+    ],
+    "entries": [
+      {
+        "remedyId": "ee01fb74-4117-49cf-a433-064971198320",
+        "abbreviation": "Gels.",
+        "grade": 4
+      },
+      {
+        "remedyId": "rem-lyc",
+        "abbreviation": "Lyc.",
+        "grade": 4
+      },
+      {
+        "remedyId": "346649a0-5db9-4991-a998-bc29fcd92af5",
+        "abbreviation": "Arg-n.",
+        "grade": 4
+      },
+      {
+        "remedyId": "rem-sil",
+        "abbreviation": "Sil.",
+        "grade": 3
+      },
+      {
+        "remedyId": "rem-phos",
+        "abbreviation": "Phos.",
+        "grade": 3
+      },
+      {
+        "remedyId": "rem-ars",
+        "abbreviation": "Ars.",
+        "grade": 2
+      },
+      {
+        "remedyId": "rem-med",
+        "abbreviation": "Med.",
+        "grade": 2
+      },
+      {
+        "remedyId": "rem-acon",
+        "abbreviation": "Acon.",
+        "grade": 2
+      }
+    ]
+  },
+  {
+    "id": "rub-mind-anx-health",
+    "chapterId": "chap-mind",
+    "chapterName": "Mind",
+    "parentId": "rub-mind-anxiety",
+    "path": "health, about",
+    "fullPath": "MIND > ANXIETY > health, about",
+    "depth": 2,
+    "remedyCount": 8,
+    "crossReferences": [
+      "FEAR > disease, of",
+      "HYPOCHONDRIASIS",
+      "DESPAIR > recovery, of"
+    ],
+    "entries": [
+      {
+        "remedyId": "rem-ars",
+        "abbreviation": "Ars.",
+        "grade": 4
+      },
+      {
+        "remedyId": "rem-calc",
+        "abbreviation": "Calc.",
+        "grade": 4
+      },
+      {
+        "remedyId": "aa4fc6ce-c494-4059-a77e-9f6358a5be11",
+        "abbreviation": "Nit-ac.",
+        "grade": 4
+      },
+      {
+        "remedyId": "rem-phos",
+        "abbreviation": "Phos.",
+        "grade": 3
+      },
+      {
+        "remedyId": "56c83df4-b0a1-4c8e-a734-aa8b5655f905",
+        "abbreviation": "Kali-c.",
+        "grade": 3
+      },
+      {
+        "remedyId": "rem-puls",
+        "abbreviation": "Puls.",
+        "grade": 2
+      },
+      {
+        "remedyId": "rem-sep",
+        "abbreviation": "Sep.",
+        "grade": 2
+      },
+      {
+        "remedyId": "rem-sulph",
+        "abbreviation": "Sulph.",
+        "grade": 2
+      }
+    ]
+  },
+  {
+    "id": "rub-mind-anx-health-relatives",
+    "chapterId": "chap-mind",
+    "chapterName": "Mind",
+    "parentId": "rub-mind-anx-health",
+    "path": "relatives and friends, of",
+    "fullPath": "MIND > ANXIETY > health, about > relatives and friends, of",
+    "depth": 3,
+    "remedyCount": 5,
+    "crossReferences": [
+      "SYMPATHETIC > others, for",
+      "AFFECTIONATE"
+    ],
+    "entries": [
+      {
+        "remedyId": "rem-phos",
+        "abbreviation": "Phos.",
+        "grade": 4
+      },
+      {
+        "remedyId": "rem-ars",
+        "abbreviation": "Ars.",
+        "grade": 3
+      },
+      {
+        "remedyId": "ca4bb35d-a20f-41ca-a7d4-ca1af45729e5",
+        "abbreviation": "Caust.",
+        "grade": 3
+      },
+      {
+        "remedyId": "4997549f-cebb-4acf-aa62-6de01da8d445",
+        "abbreviation": "Cocc.",
+        "grade": 3
+      },
+      {
+        "remedyId": "rem-sulph",
+        "abbreviation": "Sulph.",
+        "grade": 2
+      }
+    ]
+  },
+  {
+    "id": "rub-mind-fear",
+    "chapterId": "chap-mind",
+    "chapterName": "Mind",
+    "parentId": null,
+    "path": "FEAR",
+    "fullPath": "MIND > FEAR",
+    "depth": 1,
+    "remedyCount": 9,
+    "crossReferences": [
+      "ANXIETY",
+      "PANIC",
+      "DELUSIONS"
+    ],
+    "entries": [
+      {
+        "remedyId": "rem-acon",
+        "abbreviation": "Acon.",
+        "grade": 4
+      },
+      {
+        "remedyId": "rem-bell",
+        "abbreviation": "Bell.",
+        "grade": 4
+      },
+      {
+        "remedyId": "rem-phos",
+        "abbreviation": "Phos.",
+        "grade": 4
+      },
+      {
+        "remedyId": "rem-ars",
+        "abbreviation": "Ars.",
+        "grade": 4
+      },
+      {
+        "remedyId": "rem-calc",
+        "abbreviation": "Calc.",
+        "grade": 3
+      },
+      {
+        "remedyId": "rem-lyc",
+        "abbreviation": "Lyc.",
+        "grade": 3
+      },
+      {
+        "remedyId": "rem-puls",
+        "abbreviation": "Puls.",
+        "grade": 3
+      },
+      {
+        "remedyId": "c85d240a-3a2e-4dde-afe6-61a6349e8d3b",
+        "abbreviation": "Stram.",
+        "grade": 3
+      },
+      {
+        "remedyId": "5834ec0a-ae49-49e1-a86b-cd428ed7207a",
+        "abbreviation": "Hyos.",
+        "grade": 3
+      }
+    ]
+  },
+  {
+    "id": "rub-mind-fear-dark",
+    "chapterId": "chap-mind",
+    "chapterName": "Mind",
+    "parentId": "rub-mind-fear",
+    "path": "dark, of the",
+    "fullPath": "MIND > FEAR > dark, of the",
+    "depth": 2,
+    "remedyCount": 8,
+    "crossReferences": [
+      "FEAR > alone, of being",
+      "DELUSIONS > spectres"
+    ],
+    "entries": [
+      {
+        "remedyId": "c85d240a-3a2e-4dde-afe6-61a6349e8d3b",
+        "abbreviation": "Stram.",
+        "grade": 4
+      },
+      {
+        "remedyId": "rem-phos",
+        "abbreviation": "Phos.",
+        "grade": 4
+      },
+      {
+        "remedyId": "rem-bell",
+        "abbreviation": "Bell.",
+        "grade": 3
+      },
+      {
+        "remedyId": "rem-calc",
+        "abbreviation": "Calc.",
+        "grade": 3
+      },
+      {
+        "remedyId": "973a1090-a5a7-49fe-ad0d-89a896719413",
+        "abbreviation": "Cann-i.",
+        "grade": 3
+      },
+      {
+        "remedyId": "rem-puls",
+        "abbreviation": "Puls.",
+        "grade": 2
+      },
+      {
+        "remedyId": "rem-acon",
+        "abbreviation": "Acon.",
+        "grade": 2
+      },
+      {
+        "remedyId": "8694285b-f99a-460f-a0ec-6e359c8b5ba6",
+        "abbreviation": "Sanic.",
+        "grade": 2
+      }
+    ]
+  },
+  {
+    "id": "rub-mind-fear-death",
+    "chapterId": "chap-mind",
+    "chapterName": "Mind",
+    "parentId": "rub-mind-fear",
+    "path": "death, of",
+    "fullPath": "MIND > FEAR > death, of",
+    "depth": 2,
+    "remedyCount": 8,
+    "crossReferences": [
+      "PREDICTS > time of death",
+      "DESPAIR"
+    ],
+    "entries": [
+      {
+        "remedyId": "rem-acon",
+        "abbreviation": "Acon.",
+        "grade": 4
+      },
+      {
+        "remedyId": "rem-ars",
+        "abbreviation": "Ars.",
+        "grade": 4
+      },
+      {
+        "remedyId": "rem-calc",
+        "abbreviation": "Calc.",
+        "grade": 3
+      },
+      {
+        "remedyId": "ee01fb74-4117-49cf-a433-064971198320",
+        "abbreviation": "Gels.",
+        "grade": 3
+      },
+      {
+        "remedyId": "aa4fc6ce-c494-4059-a77e-9f6358a5be11",
+        "abbreviation": "Nit-ac.",
+        "grade": 3
+      },
+      {
+        "remedyId": "rem-phos",
+        "abbreviation": "Phos.",
+        "grade": 3
+      },
+      {
+        "remedyId": "0c8145a1-66ac-48cc-aaf6-258c2cc3f7e2",
+        "abbreviation": "Sec.",
+        "grade": 2
+      },
+      {
+        "remedyId": "1f269541-68e6-4f93-a67f-8162066caec3",
+        "abbreviation": "Verat.",
+        "grade": 2
+      }
+    ]
+  },
+  {
+    "id": "rub-mind-weeping-easily",
+    "chapterId": "chap-mind",
+    "chapterName": "Mind",
+    "parentId": null,
+    "path": "WEEPING > easily, tearful mood",
+    "fullPath": "MIND > WEEPING > easily, tearful mood",
+    "depth": 1,
+    "remedyCount": 8,
+    "crossReferences": [
+      "SADNESS > mild",
+      "SYMPATHY > desires"
+    ],
+    "entries": [
+      {
+        "remedyId": "rem-puls",
+        "abbreviation": "Puls.",
+        "grade": 4
+      },
+      {
+        "remedyId": "rem-sep",
+        "abbreviation": "Sep.",
+        "grade": 3
+      },
+      {
+        "remedyId": "rem-nat-m",
+        "abbreviation": "Nat-m.",
+        "grade": 3
+      },
+      {
+        "remedyId": "rem-calc",
+        "abbreviation": "Calc.",
+        "grade": 3
+      },
+      {
+        "remedyId": "rem-lyc",
+        "abbreviation": "Lyc.",
+        "grade": 2
+      },
+      {
+        "remedyId": "rem-sil",
+        "abbreviation": "Sil.",
+        "grade": 2
+      },
+      {
+        "remedyId": "efe9fb04-ba03-4f2a-a8fd-8d0b6c7597b3",
+        "abbreviation": "Ign.",
+        "grade": 3
+      },
+      {
+        "remedyId": "a782a611-ec75-47a0-a22c-79709607574f",
+        "abbreviation": "Plat.",
+        "grade": 2
+      }
+    ]
+  },
+  {
+    "id": "rub-mind-fastidious",
+    "chapterId": "chap-mind",
+    "chapterName": "Mind",
+    "parentId": null,
+    "path": "FASTIDIOUS > order, neatness",
+    "fullPath": "MIND > FASTIDIOUS > order, neatness",
+    "depth": 1,
+    "remedyCount": 6,
+    "crossReferences": [
+      "ANXIETY > trifles, about",
+      "CLEANLINESS"
+    ],
+    "entries": [
+      {
+        "remedyId": "rem-ars",
+        "abbreviation": "Ars.",
+        "grade": 4
+      },
+      {
+        "remedyId": "rem-nux-v",
+        "abbreviation": "Nux-v.",
+        "grade": 3
+      },
+      {
+        "remedyId": "rem-sil",
+        "abbreviation": "Sil.",
+        "grade": 3
+      },
+      {
+        "remedyId": "704d25b7-a020-4a0d-aa9a-a38184963a00",
+        "abbreviation": "Anac.",
+        "grade": 2
+      },
+      {
+        "remedyId": "rem-sep",
+        "abbreviation": "Sep.",
+        "grade": 2
+      },
+      {
+        "remedyId": "d2715053-014e-4ccb-a2ef-d8296e3fd258",
+        "abbreviation": "Graph.",
+        "grade": 2
+      }
+    ]
+  },
+  {
+    "id": "rub-vertigo-motion",
+    "chapterId": "chap-vertigo",
+    "chapterName": "Vertigo",
+    "parentId": null,
+    "path": "MOTION > from slightest agg",
+    "fullPath": "VERTIGO > MOTION > from slightest agg",
+    "depth": 1,
+    "remedyCount": 6,
+    "crossReferences": [
+      "VERTIGO > rising, on",
+      "HEAD > PAIN > motion agg"
+    ],
+    "entries": [
+      {
+        "remedyId": "rem-bry",
+        "abbreviation": "Bry.",
+        "grade": 4
+      },
+      {
+        "remedyId": "4997549f-cebb-4acf-aa62-6de01da8d445",
+        "abbreviation": "Cocc.",
+        "grade": 4
+      },
+      {
+        "remedyId": "aa3a32b6-716a-4cf3-ad45-7f0c91aa7c18",
+        "abbreviation": "Ther.",
+        "grade": 3
+      },
+      {
+        "remedyId": "89001df4-85ef-4951-aa7d-bebe49ea0465",
+        "abbreviation": "Con.",
+        "grade": 3
+      },
+      {
+        "remedyId": "rem-bell",
+        "abbreviation": "Bell.",
+        "grade": 2
+      },
+      {
+        "remedyId": "ee01fb74-4117-49cf-a433-064971198320",
+        "abbreviation": "Gels.",
+        "grade": 2
+      }
+    ]
+  },
+  {
+    "id": "rub-vertigo-closing-eyes",
+    "chapterId": "chap-vertigo",
+    "chapterName": "Vertigo",
+    "parentId": null,
+    "path": "CLOSING EYES > on, or in dark",
+    "fullPath": "VERTIGO > CLOSING EYES > on, or in dark",
+    "depth": 1,
+    "remedyCount": 5,
+    "crossReferences": [
+      "VERTIGO > darkness, in"
+    ],
+    "entries": [
+      {
+        "remedyId": "rem-lach",
+        "abbreviation": "Lach.",
+        "grade": 4
+      },
+      {
+        "remedyId": "aa3a32b6-716a-4cf3-ad45-7f0c91aa7c18",
+        "abbreviation": "Ther.",
+        "grade": 3
+      },
+      {
+        "remedyId": "rem-thuj",
+        "abbreviation": "Thuj.",
+        "grade": 3
+      },
+      {
+        "remedyId": "rem-ferr",
+        "abbreviation": "Ferr.",
+        "grade": 2
+      },
+      {
+        "remedyId": "0280eee4-143f-45d7-a899-440c8fdd11bb",
+        "abbreviation": "Tab.",
+        "grade": 2
+      }
+    ]
+  },
+  {
+    "id": "rub-head-pain",
+    "chapterId": "chap-head",
+    "chapterName": "Head",
+    "parentId": null,
+    "path": "PAIN (Headache in general)",
+    "fullPath": "HEAD > PAIN (Headache in general)",
+    "depth": 1,
+    "remedyCount": 9,
+    "crossReferences": [
+      "HEAD > CONGESTION",
+      "HEAD > PULSATION"
+    ],
+    "entries": [
+      {
+        "remedyId": "rem-bell",
+        "abbreviation": "Bell.",
+        "grade": 4
+      },
+      {
+        "remedyId": "rem-bry",
+        "abbreviation": "Bry.",
+        "grade": 4
+      },
+      {
+        "remedyId": "ee01fb74-4117-49cf-a433-064971198320",
+        "abbreviation": "Gels.",
+        "grade": 3
+      },
+      {
+        "remedyId": "rem-nat-m",
+        "abbreviation": "Nat-m.",
+        "grade": 3
+      },
+      {
+        "remedyId": "rem-nux-v",
+        "abbreviation": "Nux-v.",
+        "grade": 3
+      },
+      {
+        "remedyId": "rem-sulph",
+        "abbreviation": "Sulph.",
+        "grade": 3
+      },
+      {
+        "remedyId": "0c82866d-2c6d-4b6b-af71-ecf577dd9125",
+        "abbreviation": "Spig.",
+        "grade": 3
+      },
+      {
+        "remedyId": "rem-sil",
+        "abbreviation": "Sil.",
+        "grade": 3
+      },
+      {
+        "remedyId": "rem-sanguin",
+        "abbreviation": "Sanguin.",
+        "grade": 3
+      }
+    ]
+  },
+  {
+    "id": "rub-head-pain-right",
+    "chapterId": "chap-head",
+    "chapterName": "Head",
+    "parentId": "rub-head-pain",
+    "path": "right-sided",
+    "fullPath": "HEAD > PAIN > right-sided",
+    "depth": 2,
+    "remedyCount": 7,
+    "crossReferences": [
+      "HEAD > PAIN > temples, right",
+      "GENERALITIES > RIGHT SIDED"
+    ],
+    "entries": [
+      {
+        "remedyId": "rem-bell",
+        "abbreviation": "Bell.",
+        "grade": 4
+      },
+      {
+        "remedyId": "rem-sanguin",
+        "abbreviation": "Sanguin.",
+        "grade": 4
+      },
+      {
+        "remedyId": "rem-lyc",
+        "abbreviation": "Lyc.",
+        "grade": 4
+      },
+      {
+        "remedyId": "rem-bry",
+        "abbreviation": "Bry.",
+        "grade": 3
+      },
+      {
+        "remedyId": "rem-sil",
+        "abbreviation": "Sil.",
+        "grade": 3
+      },
+      {
+        "remedyId": "efe9fb04-ba03-4f2a-a8fd-8d0b6c7597b3",
+        "abbreviation": "Ign.",
+        "grade": 2
+      },
+      {
+        "remedyId": "47612b31-75fe-4e07-a6c3-e91992412c5b",
+        "abbreviation": "Iris",
+        "grade": 2
+      }
+    ]
+  },
+  {
+    "id": "rub-head-pain-sun",
+    "chapterId": "chap-head",
+    "chapterName": "Head",
+    "parentId": "rub-head-pain",
+    "path": "sun, from exposure to (sunrise to sunset)",
+    "fullPath": "HEAD > PAIN > sun, from exposure to (sunrise to sunset)",
+    "depth": 2,
+    "remedyCount": 5,
+    "crossReferences": [
+      "GENERALITIES > SUN > exposure to, agg"
+    ],
+    "entries": [
+      {
+        "remedyId": "8d58f32a-c836-4cf7-a56b-8852e583916e",
+        "abbreviation": "Glon.",
+        "grade": 4
+      },
+      {
+        "remedyId": "rem-nat-m",
+        "abbreviation": "Nat-m.",
+        "grade": 4
+      },
+      {
+        "remedyId": "rem-bell",
+        "abbreviation": "Bell.",
+        "grade": 3
+      },
+      {
+        "remedyId": "ee01fb74-4117-49cf-a433-064971198320",
+        "abbreviation": "Gels.",
+        "grade": 3
+      },
+      {
+        "remedyId": "rem-lach",
+        "abbreviation": "Lach.",
+        "grade": 2
+      }
+    ]
+  },
+  {
+    "id": "rub-eye-photophobia",
+    "chapterId": "chap-eye",
+    "chapterName": "Eye",
+    "parentId": null,
+    "path": "PHOTOPHOBIA (Intolerance of light)",
+    "fullPath": "EYE > PHOTOPHOBIA (Intolerance of light)",
+    "depth": 1,
+    "remedyCount": 6,
+    "crossReferences": [
+      "VISION > DAZZLING",
+      "HEAD > PAIN > light agg"
+    ],
+    "entries": [
+      {
+        "remedyId": "rem-bell",
+        "abbreviation": "Bell.",
+        "grade": 4
+      },
+      {
+        "remedyId": "bc7211ae-168f-4416-afad-c5aac93783f9",
+        "abbreviation": "Euphr.",
+        "grade": 4
+      },
+      {
+        "remedyId": "rem-acon",
+        "abbreviation": "Acon.",
+        "grade": 3
+      },
+      {
+        "remedyId": "77ac6386-8666-4bf8-a968-1a19b1c7210b",
+        "abbreviation": "Merc.",
+        "grade": 3
+      },
+      {
+        "remedyId": "rem-sulph",
+        "abbreviation": "Sulph.",
+        "grade": 3
+      },
+      {
+        "remedyId": "89001df4-85ef-4951-aa7d-bebe49ea0465",
+        "abbreviation": "Con.",
+        "grade": 3
+      }
+    ]
+  },
+  {
+    "id": "rub-vision-diplopia",
+    "chapterId": "chap-vision",
+    "chapterName": "Vision",
+    "parentId": null,
+    "path": "DOUBLE VISION (Diplopia)",
+    "fullPath": "VISION > DOUBLE VISION (Diplopia)",
+    "depth": 1,
+    "remedyCount": 5,
+    "crossReferences": [
+      "VISION > BLURRED",
+      "VERTIGO > diplopia with"
+    ],
+    "entries": [
+      {
+        "remedyId": "ee01fb74-4117-49cf-a433-064971198320",
+        "abbreviation": "Gels.",
+        "grade": 4
+      },
+      {
+        "remedyId": "89001df4-85ef-4951-aa7d-bebe49ea0465",
+        "abbreviation": "Con.",
+        "grade": 3
+      },
+      {
+        "remedyId": "ca4bb35d-a20f-41ca-a7d4-ca1af45729e5",
+        "abbreviation": "Caust.",
+        "grade": 3
+      },
+      {
+        "remedyId": "rem-bell",
+        "abbreviation": "Bell.",
+        "grade": 2
+      },
+      {
+        "remedyId": "5834ec0a-ae49-49e1-a86b-cd428ed7207a",
+        "abbreviation": "Hyos.",
+        "grade": 2
+      }
+    ]
+  },
+  {
+    "id": "rub-ear-otalgia",
+    "chapterId": "chap-ear",
+    "chapterName": "Ear",
+    "parentId": null,
+    "path": "PAIN > earache in general",
+    "fullPath": "EAR > PAIN > earache in general",
+    "depth": 1,
+    "remedyCount": 6,
+    "crossReferences": [
+      "EAR > DISCHARGES > purulent",
+      "TEETH > PAIN"
+    ],
+    "entries": [
+      {
+        "remedyId": "f9e5c305-2cee-4339-a0e1-538bf6a8a3fd",
+        "abbreviation": "Cham.",
+        "grade": 4
+      },
+      {
+        "remedyId": "rem-puls",
+        "abbreviation": "Puls.",
+        "grade": 4
+      },
+      {
+        "remedyId": "rem-bell",
+        "abbreviation": "Bell.",
+        "grade": 3
+      },
+      {
+        "remedyId": "rem-acon",
+        "abbreviation": "Acon.",
+        "grade": 3
+      },
+      {
+        "remedyId": "77ac6386-8666-4bf8-a968-1a19b1c7210b",
+        "abbreviation": "Merc.",
+        "grade": 3
+      },
+      {
+        "remedyId": "cf359908-a553-4499-aa9c-ef1582793257",
+        "abbreviation": "Hep.",
+        "grade": 3
+      }
+    ]
+  },
+  {
+    "id": "rub-nose-coryza-acrid",
+    "chapterId": "chap-nose",
+    "chapterName": "Nose & Coryza",
+    "parentId": null,
+    "path": "CORYZA > discharge acrid, excoriating lip",
+    "fullPath": "NOSE > CORYZA > discharge acrid, excoriating lip",
+    "depth": 1,
+    "remedyCount": 5,
+    "crossReferences": [
+      "EYE > LACHRYMATION > bland",
+      "FACE > ERUPTIONS"
+    ],
+    "entries": [
+      {
+        "remedyId": "2a990047-5b87-44ba-ad9c-edeac3e9d5c1",
+        "abbreviation": "All-c.",
+        "grade": 4
+      },
+      {
+        "remedyId": "rem-ars",
+        "abbreviation": "Ars.",
+        "grade": 4
+      },
+      {
+        "remedyId": "77ac6386-8666-4bf8-a968-1a19b1c7210b",
+        "abbreviation": "Merc.",
+        "grade": 3
+      },
+      {
+        "remedyId": "61e83394-ad11-4c6c-a1ee-b298527ab4bd",
+        "abbreviation": "Arum-t.",
+        "grade": 3
+      },
+      {
+        "remedyId": "bc7211ae-168f-4416-afad-c5aac93783f9",
+        "abbreviation": "Euphr.",
+        "grade": 2
+      }
+    ]
+  },
+  {
+    "id": "rub-face-neuralgia",
+    "chapterId": "chap-face",
+    "chapterName": "Face",
+    "parentId": null,
+    "path": "PAIN > prosopalgia / facial neuralgia",
+    "fullPath": "FACE > PAIN > prosopalgia / facial neuralgia",
+    "depth": 1,
+    "remedyCount": 6,
+    "crossReferences": [
+      "HEAD > PAIN",
+      "TEETH > PAIN"
+    ],
+    "entries": [
+      {
+        "remedyId": "0c82866d-2c6d-4b6b-af71-ecf577dd9125",
+        "abbreviation": "Spig.",
+        "grade": 4
+      },
+      {
+        "remedyId": "0485f7d1-e321-4697-ab82-299bdba6ce0e",
+        "abbreviation": "Mag-p.",
+        "grade": 4
+      },
+      {
+        "remedyId": "rem-bell",
+        "abbreviation": "Bell.",
+        "grade": 3
+      },
+      {
+        "remedyId": "71574436-1f60-4cee-ad1d-9c33b51ebcc5",
+        "abbreviation": "Coloc.",
+        "grade": 3
+      },
+      {
+        "remedyId": "rem-acon",
+        "abbreviation": "Acon.",
+        "grade": 3
+      },
+      {
+        "remedyId": "957cb403-2f6d-493d-a8df-b44eb9831115",
+        "abbreviation": "Verat-v.",
+        "grade": 2
+      }
+    ]
+  },
+  {
+    "id": "rub-mouth-mapped-tongue",
+    "chapterId": "chap-mouth",
+    "chapterName": "Mouth & Tongue",
+    "parentId": null,
+    "path": "TONGUE > mapped, patches like islands",
+    "fullPath": "MOUTH > TONGUE > mapped, patches like islands",
+    "depth": 1,
+    "remedyCount": 5,
+    "crossReferences": [
+      "MOUTH > TONGUE > red patches"
+    ],
+    "entries": [
+      {
+        "remedyId": "rem-nat-m",
+        "abbreviation": "Nat-m.",
+        "grade": 4
+      },
+      {
+        "remedyId": "61b39ecc-0671-4149-adfc-c8ffed676844",
+        "abbreviation": "Tarax.",
+        "grade": 4
+      },
+      {
+        "remedyId": "rem-lach",
+        "abbreviation": "Lach.",
+        "grade": 3
+      },
+      {
+        "remedyId": "a8f9c0bc-910e-4a00-afdf-e152cc9e9aee",
+        "abbreviation": "Ran-s.",
+        "grade": 3
+      },
+      {
+        "remedyId": "rem-ars",
+        "abbreviation": "Ars.",
+        "grade": 2
+      }
+    ]
+  },
+  {
+    "id": "rub-throat-splinter",
+    "chapterId": "chap-throat",
+    "chapterName": "Throat (Internal)",
+    "parentId": null,
+    "path": "SPLINTER SENSATION > as if fishbone or splinter sticking",
+    "fullPath": "THROAT > SPLINTER SENSATION > as if fishbone or splinter sticking",
+    "depth": 1,
+    "remedyCount": 5,
+    "crossReferences": [
+      "THROAT > PAIN > swallowing on",
+      "ROBERTS_SENSATIONS"
+    ],
+    "entries": [
+      {
+        "remedyId": "cf359908-a553-4499-aa9c-ef1582793257",
+        "abbreviation": "Hep.",
+        "grade": 4
+      },
+      {
+        "remedyId": "aa4fc6ce-c494-4059-a77e-9f6358a5be11",
+        "abbreviation": "Nit-ac.",
+        "grade": 4
+      },
+      {
+        "remedyId": "346649a0-5db9-4991-a998-bc29fcd92af5",
+        "abbreviation": "Arg-n.",
+        "grade": 4
+      },
+      {
+        "remedyId": "rem-sil",
+        "abbreviation": "Sil.",
+        "grade": 3
+      },
+      {
+        "remedyId": "83a1d44c-96c4-4d88-a263-c43f81584a32",
+        "abbreviation": "Alum.",
+        "grade": 2
+      }
+    ]
+  },
+  {
+    "id": "rub-stomach-desires",
+    "chapterId": "chap-stomach",
+    "chapterName": "Stomach",
+    "parentId": null,
+    "path": "DESIRES (Food & Drink cravings)",
+    "fullPath": "STOMACH > DESIRES (Food & Drink cravings)",
+    "depth": 1,
+    "remedyCount": 5,
+    "crossReferences": [
+      "GUERNSEY_DESIRES",
+      "GENERALITIES > FOOD"
+    ],
+    "entries": [
+      {
+        "remedyId": "rem-sulph",
+        "abbreviation": "Sulph.",
+        "grade": 3
+      },
+      {
+        "remedyId": "rem-calc",
+        "abbreviation": "Calc.",
+        "grade": 3
+      },
+      {
+        "remedyId": "rem-phos",
+        "abbreviation": "Phos.",
+        "grade": 3
+      },
+      {
+        "remedyId": "rem-nat-m",
+        "abbreviation": "Nat-m.",
+        "grade": 3
+      },
+      {
+        "remedyId": "rem-ars",
+        "abbreviation": "Ars.",
+        "grade": 2
+      }
+    ]
+  },
+  {
+    "id": "rub-stomach-des-salt",
+    "chapterId": "chap-stomach",
+    "chapterName": "Stomach",
+    "parentId": "rub-stomach-desires",
+    "path": "salt and salty things",
+    "fullPath": "STOMACH > DESIRES > salt and salty things",
+    "depth": 2,
+    "remedyCount": 6,
+    "crossReferences": [
+      "AVERSION > salt",
+      "GENERALITIES > CRAVING"
+    ],
+    "entries": [
+      {
+        "remedyId": "rem-nat-m",
+        "abbreviation": "Nat-m.",
+        "grade": 4
+      },
+      {
+        "remedyId": "rem-phos",
+        "abbreviation": "Phos.",
+        "grade": 3
+      },
+      {
+        "remedyId": "1f269541-68e6-4f93-a67f-8162066caec3",
+        "abbreviation": "Verat.",
+        "grade": 3
+      },
+      {
+        "remedyId": "rem-carb-v",
+        "abbreviation": "Carb-v.",
+        "grade": 3
+      },
+      {
+        "remedyId": "rem-med",
+        "abbreviation": "Med.",
+        "grade": 3
+      },
+      {
+        "remedyId": "ca4bb35d-a20f-41ca-a7d4-ca1af45729e5",
+        "abbreviation": "Caust.",
+        "grade": 2
+      }
+    ]
+  },
+  {
+    "id": "rub-stomach-des-cold-drinks",
+    "chapterId": "chap-stomach",
+    "chapterName": "Stomach",
+    "parentId": "rub-stomach-desires",
+    "path": "cold drinks, ice-cold water",
+    "fullPath": "STOMACH > DESIRES > cold drinks, ice-cold water",
+    "depth": 2,
+    "remedyCount": 6,
+    "crossReferences": [
+      "STOMACH > THIRST > large quantities",
+      "POLAR_FOOD_COLD_WARM"
+    ],
+    "entries": [
+      {
+        "remedyId": "rem-phos",
+        "abbreviation": "Phos.",
+        "grade": 4
+      },
+      {
+        "remedyId": "rem-bry",
+        "abbreviation": "Bry.",
+        "grade": 4
+      },
+      {
+        "remedyId": "rem-ars",
+        "abbreviation": "Ars.",
+        "grade": 3
+      },
+      {
+        "remedyId": "rem-acon",
+        "abbreviation": "Acon.",
+        "grade": 3
+      },
+      {
+        "remedyId": "rem-nat-m",
+        "abbreviation": "Nat-m.",
+        "grade": 2
+      },
+      {
+        "remedyId": "1f269541-68e6-4f93-a67f-8162066caec3",
+        "abbreviation": "Verat.",
+        "grade": 2
+      }
+    ]
+  },
+  {
+    "id": "rub-abd-distension",
+    "chapterId": "chap-abdomen",
+    "chapterName": "Abdomen",
+    "parentId": null,
+    "path": "DISTENSION (Flatulent tympanites)",
+    "fullPath": "ABDOMEN > DISTENSION (Flatulent tympanites)",
+    "depth": 1,
+    "remedyCount": 6,
+    "crossReferences": [
+      "STOMACH > ERUCTATIONS",
+      "ABDOMEN > PAIN > flatulent"
+    ],
+    "entries": [
+      {
+        "remedyId": "rem-carb-v",
+        "abbreviation": "Carb-v.",
+        "grade": 4
+      },
+      {
+        "remedyId": "rem-lyc",
+        "abbreviation": "Lyc.",
+        "grade": 4
+      },
+      {
+        "remedyId": "rem-china",
+        "abbreviation": "China",
+        "grade": 4
+      },
+      {
+        "remedyId": "rem-nux-v",
+        "abbreviation": "Nux-v.",
+        "grade": 3
+      },
+      {
+        "remedyId": "rem-raphan",
+        "abbreviation": "Raphan.",
+        "grade": 3
+      },
+      {
+        "remedyId": "ccfbf446-b7f1-4ffb-afbf-519186a6e333",
+        "abbreviation": "Asaf.",
+        "grade": 3
+      }
+    ]
+  },
+  {
+    "id": "rub-abd-dist-eating",
+    "chapterId": "chap-abdomen",
+    "chapterName": "Abdomen",
+    "parentId": "rub-abd-distension",
+    "path": "eating, after slightest morsel",
+    "fullPath": "ABDOMEN > DISTENSION > eating, after slightest morsel",
+    "depth": 2,
+    "remedyCount": 5,
+    "crossReferences": [
+      "STOMACH > FULLNESS",
+      "BORLAND_DIGESTIVE"
+    ],
+    "entries": [
+      {
+        "remedyId": "rem-lyc",
+        "abbreviation": "Lyc.",
+        "grade": 4
+      },
+      {
+        "remedyId": "rem-china",
+        "abbreviation": "China",
+        "grade": 4
+      },
+      {
+        "remedyId": "rem-carb-v",
+        "abbreviation": "Carb-v.",
+        "grade": 3
+      },
+      {
+        "remedyId": "rem-nux-v",
+        "abbreviation": "Nux-v.",
+        "grade": 3
+      },
+      {
+        "remedyId": "d2715053-014e-4ccb-a2ef-d8296e3fd258",
+        "abbreviation": "Graph.",
+        "grade": 2
+      }
+    ]
+  },
+  {
+    "id": "rub-abd-colic-bending",
+    "chapterId": "chap-abdomen",
+    "chapterName": "Abdomen",
+    "parentId": null,
+    "path": "PAIN > cramping colic, better bending double",
+    "fullPath": "ABDOMEN > PAIN > cramping colic, better bending double",
+    "depth": 1,
+    "remedyCount": 5,
+    "crossReferences": [
+      "ABDOMEN > PAIN > pressure amel",
+      "BELL_DIARRHOEA"
+    ],
+    "entries": [
+      {
+        "remedyId": "71574436-1f60-4cee-ad1d-9c33b51ebcc5",
+        "abbreviation": "Coloc.",
+        "grade": 4
+      },
+      {
+        "remedyId": "0485f7d1-e321-4697-ab82-299bdba6ce0e",
+        "abbreviation": "Mag-p.",
+        "grade": 4
+      },
+      {
+        "remedyId": "9cb9c058-09de-4390-ab70-4aece568c7f8",
+        "abbreviation": "Dios.",
+        "grade": 3
+      },
+      {
+        "remedyId": "rem-bell",
+        "abbreviation": "Bell.",
+        "grade": 3
+      },
+      {
+        "remedyId": "f9e5c305-2cee-4339-a0e1-538bf6a8a3fd",
+        "abbreviation": "Cham.",
+        "grade": 3
+      }
+    ]
+  },
+  {
+    "id": "rub-rectum-constipation-ineffectual",
+    "chapterId": "chap-rectum",
+    "chapterName": "Rectum",
+    "parentId": null,
+    "path": "INEFFECTUAL URGING > frequent, constant",
+    "fullPath": "RECTUM > INEFFECTUAL URGING > frequent, constant",
+    "depth": 1,
+    "remedyCount": 5,
+    "crossReferences": [
+      "RECTUM > CONSTIPATION",
+      "STOOL > SCANTY"
+    ],
+    "entries": [
+      {
+        "remedyId": "rem-nux-v",
+        "abbreviation": "Nux-v.",
+        "grade": 4
+      },
+      {
+        "remedyId": "rem-lyc",
+        "abbreviation": "Lyc.",
+        "grade": 3
+      },
+      {
+        "remedyId": "cc62be25-42d3-4d6f-a04b-512f069a3bcf",
+        "abbreviation": "Plb.",
+        "grade": 3
+      },
+      {
+        "remedyId": "rem-sulph",
+        "abbreviation": "Sulph.",
+        "grade": 3
+      },
+      {
+        "remedyId": "704d25b7-a020-4a0d-aa9a-a38184963a00",
+        "abbreviation": "Anac.",
+        "grade": 2
+      }
+    ]
+  },
+  {
+    "id": "rub-stool-involuntary",
+    "chapterId": "chap-stool",
+    "chapterName": "Stool",
+    "parentId": null,
+    "path": "INVOLUNTARY > passing flatus, on",
+    "fullPath": "STOOL > INVOLUNTARY > passing flatus, on",
+    "depth": 1,
+    "remedyCount": 5,
+    "crossReferences": [
+      "BELL_DIARRHOEA",
+      "RECTUM > DIARRHOEA"
+    ],
+    "entries": [
+      {
+        "remedyId": "8d3287c6-fbb6-45cb-a17b-1f17209f462a",
+        "abbreviation": "Aloe",
+        "grade": 4
+      },
+      {
+        "remedyId": "be4570e4-b24e-4dfe-a27d-d970474d51b5",
+        "abbreviation": "Oleand.",
+        "grade": 4
+      },
+      {
+        "remedyId": "1f05d1cd-cc61-48d1-ae6c-bf74c217b062",
+        "abbreviation": "Mur-ac.",
+        "grade": 3
+      },
+      {
+        "remedyId": "rem-nat-m",
+        "abbreviation": "Nat-m.",
+        "grade": 3
+      },
+      {
+        "remedyId": "6a5bdc86-a45d-4f2b-a793-74e9a7c86423",
+        "abbreviation": "Ph-ac.",
+        "grade": 2
+      }
+    ]
+  },
+  {
+    "id": "rub-bladder-tenesmus",
+    "chapterId": "chap-bladder",
+    "chapterName": "Bladder",
+    "parentId": null,
+    "path": "TENESMUS & STRANGURY (Constant burning drop by drop)",
+    "fullPath": "BLADDER > TENESMUS & STRANGURY (Constant burning drop by drop)",
+    "depth": 1,
+    "remedyCount": 5,
+    "crossReferences": [
+      "MORGAN_URINARY",
+      "URETHRA > PAIN > burning micturition"
+    ],
+    "entries": [
+      {
+        "remedyId": "d293569d-9b87-4181-ac4b-f03d5ecf5869",
+        "abbreviation": "Canth.",
+        "grade": 4
+      },
+      {
+        "remedyId": "1694667e-7960-49ec-a644-30fd5744de60",
+        "abbreviation": "Merc-c.",
+        "grade": 4
+      },
+      {
+        "remedyId": "8a3b2dde-19c3-466b-a265-947fa5bf55af",
+        "abbreviation": "Apis",
+        "grade": 3
+      },
+      {
+        "remedyId": "4a840bc4-563e-4d11-a05f-57b60b579001",
+        "abbreviation": "Equis.",
+        "grade": 3
+      },
+      {
+        "remedyId": "rem-nux-v",
+        "abbreviation": "Nux-v.",
+        "grade": 3
+      }
+    ]
+  },
+  {
+    "id": "rub-urine-red-sand",
+    "chapterId": "chap-urine",
+    "chapterName": "Urine",
+    "parentId": null,
+    "path": "SEDIMENT > red sand, brick-dust sediment",
+    "fullPath": "URINE > SEDIMENT > red sand, brick-dust sediment",
+    "depth": 1,
+    "remedyCount": 5,
+    "crossReferences": [
+      "KIDNEYS > CALCULUS",
+      "URINE > CLOUDY"
+    ],
+    "entries": [
+      {
+        "remedyId": "rem-lyc",
+        "abbreviation": "Lyc.",
+        "grade": 4
+      },
+      {
+        "remedyId": "rem-sep",
+        "abbreviation": "Sep.",
+        "grade": 3
+      },
+      {
+        "remedyId": "rem-nat-m",
+        "abbreviation": "Nat-m.",
+        "grade": 3
+      },
+      {
+        "remedyId": "925b4da8-261d-4ce6-a5f4-564e3c4a5905",
+        "abbreviation": "Berb.",
+        "grade": 3
+      },
+      {
+        "remedyId": "5a6d096f-c2b4-4856-a283-10f10ad54402",
+        "abbreviation": "Sars.",
+        "grade": 3
+      }
+    ]
+  },
+  {
+    "id": "rub-fem-bearing-down",
+    "chapterId": "chap-genitalia-female",
+    "chapterName": "Genitalia Female",
+    "parentId": null,
+    "path": "BEARING DOWN SENSATION > as if viscera would protrude",
+    "fullPath": "GENITALIA FEMALE > BEARING DOWN SENSATION > as if viscera would protrude",
+    "depth": 1,
+    "remedyCount": 5,
+    "crossReferences": [
+      "MINTON_UTERINE",
+      "PELVIS > PROLAPSUS"
+    ],
+    "entries": [
+      {
+        "remedyId": "rem-sep",
+        "abbreviation": "Sep.",
+        "grade": 4
+      },
+      {
+        "remedyId": "b11fa262-7c89-4df0-a6f4-4b2cbe6915cb",
+        "abbreviation": "Lil-t.",
+        "grade": 4
+      },
+      {
+        "remedyId": "3f84cbb6-abc7-4f8c-a261-508c948027f7",
+        "abbreviation": "Murex",
+        "grade": 3
+      },
+      {
+        "remedyId": "rem-bell",
+        "abbreviation": "Bell.",
+        "grade": 3
+      },
+      {
+        "remedyId": "a782a611-ec75-47a0-a22c-79709607574f",
+        "abbreviation": "Plat.",
+        "grade": 2
+      }
+    ]
+  },
+  {
+    "id": "rub-resp-asthma-night",
+    "chapterId": "chap-respiration",
+    "chapterName": "Respiration",
+    "parentId": null,
+    "path": "ASTHMA > midnight, after (1 to 3 AM)",
+    "fullPath": "RESPIRATION > ASTHMA > midnight, after (1 to 3 AM)",
+    "depth": 1,
+    "remedyCount": 5,
+    "crossReferences": [
+      "CHEST > SUFFOCATION",
+      "CARTIER_RESPIRATORY"
+    ],
+    "entries": [
+      {
+        "remedyId": "rem-ars",
+        "abbreviation": "Ars.",
+        "grade": 4
+      },
+      {
+        "remedyId": "56c83df4-b0a1-4c8e-a734-aa8b5655f905",
+        "abbreviation": "Kali-c.",
+        "grade": 4
+      },
+      {
+        "remedyId": "46b243a1-4fb5-41ee-a60a-394470e23c5a",
+        "abbreviation": "Samb.",
+        "grade": 3
+      },
+      {
+        "remedyId": "rem-acon",
+        "abbreviation": "Acon.",
+        "grade": 3
+      },
+      {
+        "remedyId": "rem-med",
+        "abbreviation": "Med.",
+        "grade": 2
+      }
+    ]
+  },
+  {
+    "id": "rub-cough-motion",
+    "chapterId": "chap-cough",
+    "chapterName": "Cough",
+    "parentId": null,
+    "path": "DRY COUGH > motion, from slightest agg",
+    "fullPath": "COUGH > DRY COUGH > motion, from slightest agg",
+    "depth": 1,
+    "remedyCount": 5,
+    "crossReferences": [
+      "BORLAND_PNEUMONIA",
+      "CHEST > PAIN > stitching"
+    ],
+    "entries": [
+      {
+        "remedyId": "rem-bry",
+        "abbreviation": "Bry.",
+        "grade": 4
+      },
+      {
+        "remedyId": "rem-bell",
+        "abbreviation": "Bell.",
+        "grade": 3
+      },
+      {
+        "remedyId": "rem-phos",
+        "abbreviation": "Phos.",
+        "grade": 3
+      },
+      {
+        "remedyId": "6cc120d3-2a9b-432a-a632-788af42836d7",
+        "abbreviation": "Dros.",
+        "grade": 3
+      },
+      {
+        "remedyId": "eb689baf-382a-4aed-ad93-beef18b5503c",
+        "abbreviation": "Rumx.",
+        "grade": 2
+      }
+    ]
+  },
+  {
+    "id": "rub-chest-stitches",
+    "chapterId": "chap-chest",
+    "chapterName": "Chest & Heart",
+    "parentId": null,
+    "path": "PAIN > stitching, pleural, worse breathing & motion",
+    "fullPath": "CHEST > PAIN > stitching, pleural, worse breathing & motion",
+    "depth": 1,
+    "remedyCount": 5,
+    "crossReferences": [
+      "BORLAND_PNEUMONIA",
+      "RESPIRATION > DIFFICULT"
+    ],
+    "entries": [
+      {
+        "remedyId": "rem-bry",
+        "abbreviation": "Bry.",
+        "grade": 4
+      },
+      {
+        "remedyId": "56c83df4-b0a1-4c8e-a734-aa8b5655f905",
+        "abbreviation": "Kali-c.",
+        "grade": 4
+      },
+      {
+        "remedyId": "cbfa571f-aa64-4ef2-a769-aa92b2586b7e",
+        "abbreviation": "Ran-b.",
+        "grade": 3
+      },
+      {
+        "remedyId": "rem-acon",
+        "abbreviation": "Acon.",
+        "grade": 3
+      },
+      {
+        "remedyId": "6b011e31-1b17-48a2-ae0c-a86523a7fb66",
+        "abbreviation": "Squil.",
+        "grade": 2
+      }
+    ]
+  },
+  {
+    "id": "rub-back-stiffness-rising",
+    "chapterId": "chap-back",
+    "chapterName": "Back",
+    "parentId": null,
+    "path": "STIFFNESS > rising from a seat, on",
+    "fullPath": "BACK > STIFFNESS > rising from a seat, on",
+    "depth": 1,
+    "remedyCount": 5,
+    "crossReferences": [
+      "EXTREMITIES > MOTION > initial agg, continued amel"
+    ],
+    "entries": [
+      {
+        "remedyId": "rem-rhus-t",
+        "abbreviation": "Rhus-t.",
+        "grade": 4
+      },
+      {
+        "remedyId": "0e4b6a9d-7d54-4705-a5d3-ad17f7caa9c5",
+        "abbreviation": "Rad-br.",
+        "grade": 3
+      },
+      {
+        "remedyId": "537f1d12-fe92-42c9-a7bf-fefad9f9f4c4",
+        "abbreviation": "Calc-f.",
+        "grade": 3
+      },
+      {
+        "remedyId": "398f1e3c-364b-4c76-a5a5-bc2eb60bed5e",
+        "abbreviation": "Led.",
+        "grade": 2
+      },
+      {
+        "remedyId": "75e9a823-4d90-4780-a7bf-5473a24c80fe",
+        "abbreviation": "Valer.",
+        "grade": 2
+      }
+    ]
+  },
+  {
+    "id": "rub-ext-restless-legs",
+    "chapterId": "chap-extremities",
+    "chapterName": "Extremities",
+    "parentId": null,
+    "path": "RESTLESSNESS > feet & legs in bed",
+    "fullPath": "EXTREMITIES > RESTLESSNESS > feet & legs in bed",
+    "depth": 1,
+    "remedyCount": 5,
+    "crossReferences": [
+      "SLEEP > RESTLESS",
+      "GENERALITIES > MOTION AMEL"
+    ],
+    "entries": [
+      {
+        "remedyId": "1ddd5afb-7a77-4448-a166-bd36349f39e9",
+        "abbreviation": "Zinc.",
+        "grade": 4
+      },
+      {
+        "remedyId": "rem-rhus-t",
+        "abbreviation": "Rhus-t.",
+        "grade": 4
+      },
+      {
+        "remedyId": "rem-med",
+        "abbreviation": "Med.",
+        "grade": 3
+      },
+      {
+        "remedyId": "ca4bb35d-a20f-41ca-a7d4-ca1af45729e5",
+        "abbreviation": "Caust.",
+        "grade": 3
+      },
+      {
+        "remedyId": "rem-ars",
+        "abbreviation": "Ars.",
+        "grade": 3
+      }
+    ]
+  },
+  {
+    "id": "rub-ext-soles-burning",
+    "chapterId": "chap-extremities",
+    "chapterName": "Extremities",
+    "parentId": null,
+    "path": "HEAT > soles of feet, burning, puts them out of bed",
+    "fullPath": "EXTREMITIES > HEAT > soles of feet, burning, puts them out of bed",
+    "depth": 1,
+    "remedyCount": 5,
+    "crossReferences": [
+      "GENERALITIES > HEAT > flushes",
+      "SLEEP > UNCOVERING FEET"
+    ],
+    "entries": [
+      {
+        "remedyId": "rem-sulph",
+        "abbreviation": "Sulph.",
+        "grade": 4
+      },
+      {
+        "remedyId": "f9e5c305-2cee-4339-a0e1-538bf6a8a3fd",
+        "abbreviation": "Cham.",
+        "grade": 4
+      },
+      {
+        "remedyId": "rem-med",
+        "abbreviation": "Med.",
+        "grade": 3
+      },
+      {
+        "remedyId": "5c931e81-5f46-46f0-a28f-b5cafd205210",
+        "abbreviation": "Sang.",
+        "grade": 3
+      },
+      {
+        "remedyId": "rem-puls",
+        "abbreviation": "Puls.",
+        "grade": 2
+      }
+    ]
+  },
+  {
+    "id": "rub-sleep-waking-3am",
+    "chapterId": "chap-sleep-dreams",
+    "chapterName": "Sleep & Dreams",
+    "parentId": null,
+    "path": "WAKING > 3 to 4 AM, unable to sleep",
+    "fullPath": "SLEEP & DREAMS > WAKING > 3 to 4 AM, unable to sleep",
+    "depth": 1,
+    "remedyCount": 5,
+    "crossReferences": [
+      "BOGER_TIMES",
+      "MIND > ANXIETY > waking on"
+    ],
+    "entries": [
+      {
+        "remedyId": "rem-nux-v",
+        "abbreviation": "Nux-v.",
+        "grade": 4
+      },
+      {
+        "remedyId": "56c83df4-b0a1-4c8e-a734-aa8b5655f905",
+        "abbreviation": "Kali-c.",
+        "grade": 4
+      },
+      {
+        "remedyId": "rem-ars",
+        "abbreviation": "Ars.",
+        "grade": 3
+      },
+      {
+        "remedyId": "rem-sulph",
+        "abbreviation": "Sulph.",
+        "grade": 3
+      },
+      {
+        "remedyId": "rem-calc",
+        "abbreviation": "Calc.",
+        "grade": 2
+      }
+    ]
+  },
+  {
+    "id": "rub-chill-uncovering",
+    "chapterId": "chap-chill",
+    "chapterName": "Chill & Ague",
+    "parentId": null,
+    "path": "CHILLINESS > uncovering slightest part agg",
+    "fullPath": "CHILL & AGUE > CHILLINESS > uncovering slightest part agg",
+    "depth": 1,
+    "remedyCount": 5,
+    "crossReferences": [
+      "ALLEN_FEVERS",
+      "GENERALITIES > COLD AIR AGG"
+    ],
+    "entries": [
+      {
+        "remedyId": "cf359908-a553-4499-aa9c-ef1582793257",
+        "abbreviation": "Hep.",
+        "grade": 4
+      },
+      {
+        "remedyId": "rem-nux-v",
+        "abbreviation": "Nux-v.",
+        "grade": 4
+      },
+      {
+        "remedyId": "rem-sil",
+        "abbreviation": "Sil.",
+        "grade": 3
+      },
+      {
+        "remedyId": "rem-rhus-t",
+        "abbreviation": "Rhus-t.",
+        "grade": 3
+      },
+      {
+        "remedyId": "rem-bell",
+        "abbreviation": "Bell.",
+        "grade": 2
+      }
+    ]
+  },
+  {
+    "id": "rub-sweat-offensive-feet",
+    "chapterId": "chap-perspiration",
+    "chapterName": "Perspiration",
+    "parentId": null,
+    "path": "OFFENSIVE SWEAT > feet, excoriating and fetid",
+    "fullPath": "PERSPIRATION > OFFENSIVE SWEAT > feet, excoriating and fetid",
+    "depth": 1,
+    "remedyCount": 5,
+    "crossReferences": [
+      "EXTREMITIES > PERSPIRATION > feet",
+      "SUPPRESSION > foot sweat"
+    ],
+    "entries": [
+      {
+        "remedyId": "rem-sil",
+        "abbreviation": "Sil.",
+        "grade": 4
+      },
+      {
+        "remedyId": "rem-barytc",
+        "abbreviation": "Baryt-c.",
+        "grade": 3
+      },
+      {
+        "remedyId": "rem-thuj",
+        "abbreviation": "Thuj.",
+        "grade": 3
+      },
+      {
+        "remedyId": "aa4fc6ce-c494-4059-a77e-9f6358a5be11",
+        "abbreviation": "Nit-ac.",
+        "grade": 3
+      },
+      {
+        "remedyId": "8694285b-f99a-460f-a0ec-6e359c8b5ba6",
+        "abbreviation": "Sanic.",
+        "grade": 3
+      }
+    ]
+  },
+  {
+    "id": "rub-skin-itching-warmth",
+    "chapterId": "chap-skin",
+    "chapterName": "Skin",
+    "parentId": null,
+    "path": "ITCHING > warmth of bed agg, scratches till raw",
+    "fullPath": "SKIN > ITCHING > warmth of bed agg, scratches till raw",
+    "depth": 1,
+    "remedyCount": 5,
+    "crossReferences": [
+      "DOUGLAS_SKIN",
+      "SKIN > ERUPTIONS > voluptuous itching"
+    ],
+    "entries": [
+      {
+        "remedyId": "rem-sulph",
+        "abbreviation": "Sulph.",
+        "grade": 4
+      },
+      {
+        "remedyId": "3e0a40af-0677-48df-af44-50b407dfe9fc",
+        "abbreviation": "Psor.",
+        "grade": 4
+      },
+      {
+        "remedyId": "77ac6386-8666-4bf8-a968-1a19b1c7210b",
+        "abbreviation": "Merc.",
+        "grade": 3
+      },
+      {
+        "remedyId": "f3292b50-92cd-43ed-add7-ff30263b745e",
+        "abbreviation": "Mez.",
+        "grade": 3
+      },
+      {
+        "remedyId": "83a1d44c-96c4-4d88-a263-c43f81584a32",
+        "abbreviation": "Alum.",
+        "grade": 2
+      }
+    ]
+  },
+  {
+    "id": "rub-gen-cold-agg",
+    "chapterId": "chap-generalities",
+    "chapterName": "Generalities",
+    "parentId": null,
+    "path": "COLD > in general, cold air, weather, draft agg",
+    "fullPath": "GENERALITIES > COLD > in general, cold air, weather, draft agg",
+    "depth": 1,
+    "remedyCount": 7,
+    "crossReferences": [
+      "POLAR_TEMP_COLD_WARM",
+      "GENERALITIES > WARMTH AMEL"
+    ],
+    "entries": [
+      {
+        "remedyId": "rem-ars",
+        "abbreviation": "Ars.",
+        "grade": 4
+      },
+      {
+        "remedyId": "rem-sil",
+        "abbreviation": "Sil.",
+        "grade": 4
+      },
+      {
+        "remedyId": "cf359908-a553-4499-aa9c-ef1582793257",
+        "abbreviation": "Hep.",
+        "grade": 4
+      },
+      {
+        "remedyId": "rem-calc",
+        "abbreviation": "Calc.",
+        "grade": 3
+      },
+      {
+        "remedyId": "rem-nux-v",
+        "abbreviation": "Nux-v.",
+        "grade": 3
+      },
+      {
+        "remedyId": "3e0a40af-0677-48df-af44-50b407dfe9fc",
+        "abbreviation": "Psor.",
+        "grade": 3
+      },
+      {
+        "remedyId": "rem-rhus-t",
+        "abbreviation": "Rhus-t.",
+        "grade": 3
+      }
+    ]
+  },
+  {
+    "id": "rub-gen-warm-open-air",
+    "chapterId": "chap-generalities",
+    "chapterName": "Generalities",
+    "parentId": null,
+    "path": "WARMTH AGG > open cool air amel",
+    "fullPath": "GENERALITIES > WARMTH AGG > open cool air amel",
+    "depth": 1,
+    "remedyCount": 7,
+    "crossReferences": [
+      "POLAR_TEMP_COLD_WARM",
+      "GENERALITIES > COLD AMEL"
+    ],
+    "entries": [
+      {
+        "remedyId": "rem-puls",
+        "abbreviation": "Puls.",
+        "grade": 4
+      },
+      {
+        "remedyId": "rem-sulph",
+        "abbreviation": "Sulph.",
+        "grade": 4
+      },
+      {
+        "remedyId": "bc7d705a-078a-417e-a2df-a4660eedd61e",
+        "abbreviation": "Iod.",
+        "grade": 4
+      },
+      {
+        "remedyId": "0c8145a1-66ac-48cc-aaf6-258c2cc3f7e2",
+        "abbreviation": "Sec.",
+        "grade": 3
+      },
+      {
+        "remedyId": "8a3b2dde-19c3-466b-a265-947fa5bf55af",
+        "abbreviation": "Apis",
+        "grade": 3
+      },
+      {
+        "remedyId": "rem-nat-m",
+        "abbreviation": "Nat-m.",
+        "grade": 3
+      },
+      {
+        "remedyId": "rem-lach",
+        "abbreviation": "Lach.",
+        "grade": 3
+      }
+    ]
+  },
+  {
+    "id": "rub-gen-motion-continued-amel",
+    "chapterId": "chap-generalities",
+    "chapterName": "Generalities",
+    "parentId": null,
+    "path": "MOTION > on beginning agg, continuous motion amel",
+    "fullPath": "GENERALITIES > MOTION > on beginning agg, continuous motion amel",
+    "depth": 1,
+    "remedyCount": 5,
+    "crossReferences": [
+      "POLAR_MOTION_REST",
+      "BACK > STIFFNESS"
+    ],
+    "entries": [
+      {
+        "remedyId": "rem-rhus-t",
+        "abbreviation": "Rhus-t.",
+        "grade": 4
+      },
+      {
+        "remedyId": "0e4b6a9d-7d54-4705-a5d3-ad17f7caa9c5",
+        "abbreviation": "Rad-br.",
+        "grade": 3
+      },
+      {
+        "remedyId": "7eb060dc-be46-466d-a9c4-39350fbd33f7",
+        "abbreviation": "Ruta",
+        "grade": 3
+      },
+      {
+        "remedyId": "89001df4-85ef-4951-aa7d-bebe49ea0465",
+        "abbreviation": "Con.",
+        "grade": 2
+      },
+      {
+        "remedyId": "rem-puls",
+        "abbreviation": "Puls.",
+        "grade": 2
+      }
+    ]
+  },
+  {
+    "id": "rub-gen-right-sided",
+    "chapterId": "chap-generalities",
+    "chapterName": "Generalities",
+    "parentId": null,
+    "path": "SIDES > right-sided complaints predominant",
+    "fullPath": "GENERALITIES > SIDES > right-sided complaints predominant",
+    "depth": 1,
+    "remedyCount": 6,
+    "crossReferences": [
+      "HEAD > PAIN > right-sided",
+      "ABDOMEN > LIVER"
+    ],
+    "entries": [
+      {
+        "remedyId": "rem-lyc",
+        "abbreviation": "Lyc.",
+        "grade": 4
+      },
+      {
+        "remedyId": "rem-bell",
+        "abbreviation": "Bell.",
+        "grade": 4
+      },
+      {
+        "remedyId": "rem-bry",
+        "abbreviation": "Bry.",
+        "grade": 3
+      },
+      {
+        "remedyId": "89a36530-6bf3-4b41-aae1-ba6db1dab0f0",
+        "abbreviation": "Chel.",
+        "grade": 3
+      },
+      {
+        "remedyId": "5c931e81-5f46-46f0-a28f-b5cafd205210",
+        "abbreviation": "Sang.",
+        "grade": 3
+      },
+      {
+        "remedyId": "47612b31-75fe-4e07-a6c3-e91992412c5b",
+        "abbreviation": "Iris",
+        "grade": 2
+      }
+    ]
+  },
+  {
+    "id": "rub-gen-left-sided",
+    "chapterId": "chap-generalities",
+    "chapterName": "Generalities",
+    "parentId": null,
+    "path": "SIDES > left-sided complaints predominant",
+    "fullPath": "GENERALITIES > SIDES > left-sided complaints predominant",
+    "depth": 1,
+    "remedyCount": 6,
+    "crossReferences": [
+      "CHEST > HEART",
+      "OVARIES > LEFT"
+    ],
+    "entries": [
+      {
+        "remedyId": "rem-lach",
+        "abbreviation": "Lach.",
+        "grade": 4
+      },
+      {
+        "remedyId": "rem-sep",
+        "abbreviation": "Sep.",
+        "grade": 3
+      },
+      {
+        "remedyId": "rem-phos",
+        "abbreviation": "Phos.",
+        "grade": 3
+      },
+      {
+        "remedyId": "0c82866d-2c6d-4b6b-af71-ecf577dd9125",
+        "abbreviation": "Spig.",
+        "grade": 3
+      },
+      {
+        "remedyId": "rem-thuj",
+        "abbreviation": "Thuj.",
+        "grade": 3
+      },
+      {
+        "remedyId": "1ddd5afb-7a77-4448-a166-bd36349f39e9",
+        "abbreviation": "Zinc.",
+        "grade": 2
+      }
+    ]
+  }
+]
