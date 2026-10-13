@@ -33,6 +33,7 @@ import {
   INITIAL_PRESCRIPTIONS,
   INITIAL_APPOINTMENTS,
 } from './patientsInitialData';
+import { INITIAL_CASE_ANALYSES } from './caseAnalysesInitialData';
 import {
   INITIAL_SPECIALTY_REPERTORIES,
   INITIAL_SPECIALTY_RUBRICS,
@@ -137,5 +138,15 @@ export async function hydrateInitialDomainFixtures(
     for (const g of INITIAL_VETERINARY_GUIDANCE) await svTx.objectStore('veterinary_guidance').put(g);
     for (const c of INITIAL_VETERINARY_CASES) await svTx.objectStore('veterinary_cases').put(c);
     await svTx.done;
+  }
+
+  // 9. Initial Case Analyses Fixtures (Homepath Zomeo Parity)
+  if (db.objectStoreNames.contains('case_analyses')) {
+    const caCount = await db.count('case_analyses');
+    if (caCount === 0) {
+      const caTx = db.transaction('case_analyses', 'readwrite');
+      for (const ca of INITIAL_CASE_ANALYSES) await caTx.objectStore('case_analyses').put(ca);
+      await caTx.done;
+    }
   }
 }

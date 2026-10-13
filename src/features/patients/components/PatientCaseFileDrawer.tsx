@@ -24,6 +24,7 @@ import {
   Thermometer,
   ShieldAlert,
   Flame,
+  Compass,
 } from 'lucide-react';
 import { useAppDispatch, useAppSelector } from '@/app/store';
 import {
@@ -32,13 +33,16 @@ import {
   setActivePatientConsultations,
   setActivePatientPrescriptions,
   setActivePatientAppointments,
+  setActivePatientCaseAnalyses,
 } from '@/app/store/slices/patientSlice';
 import {
   getLocalConsultations,
   getLocalPrescriptions,
   getLocalAppointments,
+  getLocalCaseAnalyses,
 } from '@/core/storage/indexedDbPatients';
 import type { Prescription, Appointment } from '@/features/patients/types';
+import { PatientRepertorialAnalysisTab } from './PatientRepertorialAnalysisTab';
 
 export const PatientCaseFileDrawer: React.FC = () => {
   const dispatch = useAppDispatch();
@@ -53,6 +57,9 @@ export const PatientCaseFileDrawer: React.FC = () => {
   const appointments = useAppSelector(
     (state) => state.patients.activePatientAppointments
   );
+  const caseAnalyses = useAppSelector(
+    (state) => state.patients.activePatientCaseAnalyses
+  );
   const [isPending, startTransition] = useTransition();
 
   useEffect(() => {
@@ -64,12 +71,14 @@ export const PatientCaseFileDrawer: React.FC = () => {
       getLocalConsultations(activePatient.id),
       getLocalPrescriptions(activePatient.id),
       getLocalAppointments(activePatient.id),
-    ]).then(([cons, rxs, apts]) => {
+      getLocalCaseAnalyses(activePatient.id),
+    ]).then(([cons, rxs, apts, analyses]) => {
       if (!isMounted) return;
       startTransition(() => {
         dispatch(setActivePatientConsultations(cons));
         dispatch(setActivePatientPrescriptions(rxs));
         dispatch(setActivePatientAppointments(apts));
+        dispatch(setActivePatientCaseAnalyses(analyses));
       });
     });
 
@@ -320,6 +329,15 @@ export const PatientCaseFileDrawer: React.FC = () => {
                   )}
                 </div>
               ),
+            },
+            {
+              key: 'repertorial-totality',
+              label: (
+                <span className="flex items-center gap-1.5 text-xs font-medium">
+                  <Compass className="w-3.5 h-3.5 text-primary-500" /> Repertorial Totality ({caseAnalyses.length})
+                </span>
+              ),
+              children: <PatientRepertorialAnalysisTab patientId={activePatient.id} />,
             },
             {
               key: 'prescriptions',

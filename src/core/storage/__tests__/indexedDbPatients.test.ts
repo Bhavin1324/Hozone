@@ -11,8 +11,17 @@ import {
   saveLocalPrescription,
   getLocalAppointments,
   saveLocalAppointment,
+  getLocalCaseAnalyses,
+  saveLocalCaseAnalysis,
+  deleteLocalCaseAnalysis,
 } from '../indexedDbPatients';
-import type { Patient, Consultation, Prescription, Appointment } from '@/features/patients/types';
+import type {
+  Patient,
+  Consultation,
+  Prescription,
+  Appointment,
+  CaseRepertorialAnalysis,
+} from '@/features/patients/types';
 
 describe('Local-First IndexedDB Patient Management Storage (v8)', () => {
   beforeEach(async () => {
@@ -148,6 +157,59 @@ describe('Local-First IndexedDB Patient Management Storage (v8)', () => {
       await saveLocalAppointment(newApt);
       const updated = await getLocalAppointments('a1111111-1111-4111-8111-111111111111');
       expect(updated.some((a) => a.id === 'test-apt-uuid-999')).toBe(true);
+    });
+  });
+
+  describe('Case Repertorial Analysis Totality Store', () => {
+    it('retrieves seeded case repertorial analyses for Eleanor Vance', async () => {
+      const analyses = await getLocalCaseAnalyses('a1111111-1111-4111-8111-111111111111');
+      expect(analyses.length).toBeGreaterThanOrEqual(1);
+      const sample = analyses[0];
+      expect(sample.title).toBe('Initial Intake: Right Hemicrania Totality');
+      expect(sample.repertoryId).toBe('rep-kent');
+      expect(sample.rubrics.length).toBeGreaterThanOrEqual(3);
+      expect(sample.rankedRemedies.length).toBeGreaterThanOrEqual(1);
+    });
+
+    it('persists a new repertorial analysis and deletes it cleanly', async () => {
+      const newAnalysis: CaseRepertorialAnalysis = {
+        id: 'test-case-analysis-uuid-999',
+        patientId: 'a1111111-1111-4111-8111-111111111111',
+        title: 'Chronic Follow-up Totality Check',
+        analysisDate: new Date().toISOString(),
+        repertoryId: 'rep-kent-en',
+        repertoryName: 'Kent Repertory',
+        scoringModel: 'coverage_first',
+        rubrics: [
+          {
+            rubricId: 'head-pain-right-side',
+            fullPath: 'HEAD - PAIN - right side',
+            chapterName: 'HEAD',
+            weight: 2,
+            isEliminating: false,
+          },
+        ],
+        rankedRemedies: [
+          {
+            remedyId: 'rem-sang',
+            abbreviation: 'sang.',
+            fullName: 'Sanguinaria Canadensis',
+            coverageCount: 1,
+            totalScore: 6,
+            rubricGrades: { 'head-pain-right-side': 3 },
+          },
+        ],
+        notes: 'Good correspondence to right-sided temporal pain.',
+      };
+
+      await saveLocalCaseAnalysis(newAnalysis);
+      const list = await getLocalCaseAnalyses('a1111111-1111-4111-8111-111111111111');
+      expect(list.some((a) => a.id === 'test-case-analysis-uuid-999')).toBe(true);
+
+      // Cleanly delete
+      await deleteLocalCaseAnalysis('test-case-analysis-uuid-999');
+      const updatedList = await getLocalCaseAnalyses('a1111111-1111-4111-8111-111111111111');
+      expect(updatedList.some((a) => a.id === 'test-case-analysis-uuid-999')).toBe(false);
     });
   });
 });

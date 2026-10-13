@@ -64,6 +64,7 @@ export interface Consultation {
   kentObservationNum?: number;
   followUpProgression?: string;
   nextFollowUpDate?: string;
+  repertorialAnalysisId?: string;
   createdAt: string;
   updatedAt: string;
 }
@@ -92,4 +93,57 @@ export interface Appointment {
   notes?: string;
   createdAt: string;
   updatedAt: string;
+}
+
+export interface CaseRubricSnapshot {
+  rubricId: string;
+  fullPath: string;
+  chapterName: string;
+  weight: 1 | 2 | 3 | 4 | 5;
+  isEliminating: boolean;
+  remedyCount?: number;
+  path?: string;
+}
+
+export interface CaseRankedRemedySnapshot {
+  remedyId: string;
+  abbreviation: string;
+  fullName: string;
+  coverageCount: number;
+  totalScore: number;
+  rubricGrades: Record<string, number>; // rubricId -> grade (1..4)
+}
+
+export interface CasePolarityAnalysisSnapshot {
+  evaluatedPairCount: number;
+  topRemedies: Array<{
+    remedyId: string;
+    abbreviation: string;
+    polarScore: number;
+    contraindicationScore: number;
+    polarityDifference: number;
+    isContraindicated: boolean;
+  }>;
+}
+
+export interface CaseRepertorialAnalysis {
+  id: string;
+  patientId: string;
+  consultationId?: string;
+  title: string;
+  analysisDate: string;
+  repertoryId: string;
+  repertoryName: string;
+  scoringModel: string;
+  rubrics: CaseRubricSnapshot[];
+  rankedRemedies: CaseRankedRemedySnapshot[];
+  polarityAnalysis?: CasePolarityAnalysisSnapshot;
+  filters?: {
+    thermals: string[];
+    miasms: string[];
+    kingdoms: string[];
+  };
+  notes?: string;
+  createdAt?: string;
+  updatedAt?: string;
 }

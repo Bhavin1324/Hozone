@@ -5,6 +5,7 @@ import type {
   Prescription,
   Appointment,
   PatientStatus,
+  CaseRepertorialAnalysis,
 } from '@/features/patients/types';
 
 export interface PatientState {
@@ -13,6 +14,7 @@ export interface PatientState {
   activePatientConsultations: Consultation[];
   activePatientPrescriptions: Prescription[];
   activePatientAppointments: Appointment[];
+  activePatientCaseAnalyses: CaseRepertorialAnalysis[];
   searchQuery: string;
   filterStatus: PatientStatus | 'All';
   isCaseFileOpen: boolean;
@@ -28,6 +30,7 @@ const initialState: PatientState = {
   activePatientConsultations: [],
   activePatientPrescriptions: [],
   activePatientAppointments: [],
+  activePatientCaseAnalyses: [],
   searchQuery: '',
   filterStatus: 'All',
   isCaseFileOpen: false,
@@ -61,6 +64,7 @@ export const patientSlice = createSlice({
       state.activePatientConsultations = [];
       state.activePatientPrescriptions = [];
       state.activePatientAppointments = [];
+      state.activePatientCaseAnalyses = [];
     },
     setActivePatientConsultations: (state, action: PayloadAction<Consultation[]>) => {
       state.activePatientConsultations = action.payload;
@@ -79,6 +83,20 @@ export const patientSlice = createSlice({
     },
     addAppointment: (state, action: PayloadAction<Appointment>) => {
       state.activePatientAppointments = [...state.activePatientAppointments, action.payload];
+    },
+    setActivePatientCaseAnalyses: (state, action: PayloadAction<CaseRepertorialAnalysis[]>) => {
+      state.activePatientCaseAnalyses = action.payload;
+    },
+    addCaseAnalysis: (state, action: PayloadAction<CaseRepertorialAnalysis>) => {
+      state.activePatientCaseAnalyses = [
+        action.payload,
+        ...state.activePatientCaseAnalyses.filter((ca) => ca.id !== action.payload.id),
+      ];
+    },
+    removeCaseAnalysis: (state, action: PayloadAction<string>) => {
+      state.activePatientCaseAnalyses = state.activePatientCaseAnalyses.filter(
+        (ca) => ca.id !== action.payload
+      );
     },
     setSearchQuery: (state, action: PayloadAction<string>) => {
       state.searchQuery = action.payload;
@@ -116,6 +134,9 @@ export const {
   addPrescription,
   setActivePatientAppointments,
   addAppointment,
+  setActivePatientCaseAnalyses,
+  addCaseAnalysis,
+  removeCaseAnalysis,
   setSearchQuery,
   setFilterStatus,
   setCaseFileOpen,

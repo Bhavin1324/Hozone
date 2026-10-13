@@ -19,6 +19,7 @@ import repertorizationReducer, {
   toggleExpandRubric,
   setRubricViewMode,
   setSqliteSyncProgress,
+  loadClipboardSession,
 } from '../slices/repertorizationSlice';
 import { INITIAL_RUBRICS } from '@/core/storage/initialData';
 
@@ -212,5 +213,37 @@ describe('Repertorization Redux Slice', () => {
     );
     expect(state.sqliteSync.status).toBe('ready');
     expect(state.sqliteSync.progressPercent).toBe(100);
+  });
+
+  it('restores a saved case totality session into the active clipboard (Homepath Zomeo Parity)', () => {
+    let state = repertorizationReducer(initial, toggleSelectClipboardRubric('temp-selection'));
+    expect(state.selectedClipboardIds).toHaveLength(1);
+
+    const savedRubrics = [
+      {
+        rubricId: 'head-pain-right-side',
+        fullPath: 'HEAD - PAIN - right side',
+        chapterName: 'HEAD',
+        weight: 3 as const,
+        isEliminating: true,
+      },
+    ];
+
+    state = repertorizationReducer(
+      state,
+      loadClipboardSession({
+        activeRubrics: savedRubrics,
+        scoringModel: 'weighted_sum',
+        selectedRepertoryId: 'rep-boenninghausen-en',
+      })
+    );
+
+    expect(state.activeRubrics).toHaveLength(1);
+    expect(state.activeRubrics[0].rubricId).toBe('head-pain-right-side');
+    expect(state.activeRubrics[0].weight).toBe(3);
+    expect(state.activeRubrics[0].isEliminating).toBe(true);
+    expect(state.scoringModel).toBe('weighted_sum');
+    expect(state.selectedRepertoryId).toBe('rep-boenninghausen-en');
+    expect(state.selectedClipboardIds).toHaveLength(0);
   });
 });

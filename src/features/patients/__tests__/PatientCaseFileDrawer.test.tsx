@@ -42,6 +42,7 @@ describe('PatientCaseFileDrawer Component', () => {
     expect(screen.getByText(/Dominant Miasm:/i)).toBeDefined();
 
     expect(screen.getByText(/Consultations Timeline/i)).toBeDefined();
+    expect(screen.getByText(/Repertorial Totality/i)).toBeDefined();
     expect(screen.getByText(/Prescriptions/i)).toBeDefined();
     expect(screen.getByText(/Constitutional Anamnesis/i)).toBeDefined();
     expect(screen.getByText(/Appointments/i)).toBeDefined();

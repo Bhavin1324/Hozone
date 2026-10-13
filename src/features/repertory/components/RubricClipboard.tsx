@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Button, Tooltip, Tag, Checkbox, Select } from 'antd';
-import { Trash2, ShieldAlert, X, Merge, Split } from 'lucide-react';
+import { Trash2, ShieldAlert, X, Merge, Split, FolderPlus } from 'lucide-react';
 import type { ActiveCaseRubric, MergeStrategy } from '../types';
 
 interface RubricClipboardProps {
@@ -13,6 +13,7 @@ interface RubricClipboardProps {
   onSetWeight: (rubricId: string, weight: 1 | 2 | 3 | 4 | 5) => void;
   onToggleEliminating: (rubricId: string) => void;
   onClearClipboard: () => void;
+  onSaveToCase?: () => void;
 }
 
 export const RubricClipboard: React.FC<RubricClipboardProps> = ({
@@ -25,6 +26,7 @@ export const RubricClipboard: React.FC<RubricClipboardProps> = ({
   onSetWeight,
   onToggleEliminating,
   onClearClipboard,
+  onSaveToCase,
 }) => {
   const [selectedStrategy, setSelectedStrategy] = useState<MergeStrategy>('max_grade');
 
@@ -52,15 +54,28 @@ export const RubricClipboard: React.FC<RubricClipboardProps> = ({
             • {activeRubrics.filter((r) => r.isEliminating).length} eliminating
           </span>
         </div>
-        <Button
-          type="text"
-          danger
-          size="small"
-          icon={<Trash2 className="w-3.5 h-3.5 mr-1" />}
-          onClick={onClearClipboard}
-        >
-          Clear All
-        </Button>
+        <div className="flex items-center space-x-1">
+          {onSaveToCase && (
+            <Button
+              type="text"
+              size="small"
+              icon={<FolderPlus className="w-3.5 h-3.5 mr-1 text-primary-500" />}
+              onClick={onSaveToCase}
+              className="text-primary-600 hover:text-primary-700 font-medium"
+            >
+              Save to Case
+            </Button>
+          )}
+          <Button
+            type="text"
+            danger
+            size="small"
+            icon={<Trash2 className="w-3.5 h-3.5 mr-1" />}
+            onClick={onClearClipboard}
+          >
+            Clear All
+          </Button>
+        </div>
       </div>
 
       {/* Rubric Combine Action Bar when 2+ rubrics are checked */}

@@ -221,6 +221,28 @@ export const repertorizationSlice = createSlice({
         state.sqliteSync.error = action.payload.error;
       }
     },
+    loadClipboardSession: (
+      state,
+      action: PayloadAction<{
+        activeRubrics: ActiveCaseRubric[];
+        scoringModel?: ScoringModel;
+        selectedRepertoryId?: string;
+        filters?: FilterCriteria;
+      }>
+    ) => {
+      state.activeRubrics = action.payload.activeRubrics;
+      state.combinedRubricsMap = {};
+      state.selectedClipboardIds = [];
+      if (action.payload.scoringModel) {
+        state.scoringModel = action.payload.scoringModel;
+      }
+      if (action.payload.selectedRepertoryId) {
+        state.selectedRepertoryId = action.payload.selectedRepertoryId;
+      }
+      if (action.payload.filters) {
+        state.filters = action.payload.filters;
+      }
+    },
   },
 });
 
@@ -248,6 +270,7 @@ export const {
   setExpandedRubricIds,
   setRubricViewMode,
   setSqliteSyncProgress,
+  loadClipboardSession,
 } = repertorizationSlice.actions;
 
 export default repertorizationSlice.reducer;

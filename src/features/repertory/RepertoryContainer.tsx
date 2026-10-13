@@ -55,6 +55,8 @@ import { FilterToolbar } from './components/FilterToolbar';
 import { RepertorizationGrid } from './components/RepertorizationGrid';
 import { PolarityAnalysisGrid } from './components/PolarityAnalysisGrid';
 import { RemedyDetailDrawer } from './components/RemedyDetailDrawer';
+import { ActivePatientBanner } from './components/ActivePatientBanner';
+import { SaveToPatientCaseModal } from './components/SaveToPatientCaseModal';
 import { useDebounce } from '@/core/hooks/useDebounce';
 
 export const RepertoryContainer: React.FC = () => {
@@ -87,8 +89,13 @@ export const RepertoryContainer: React.FC = () => {
     totalEvaluated: 0,
     qualifyingCount: 0,
   });
+  const [isSaveModalOpen, setIsSaveModalOpen] = useState(false);
 
   const debouncedSearch = useDebounce(searchQuery, 150);
+
+  const activeRepertoryName = useMemo(() => {
+    return repertories.find((r) => r.id === selectedRepertoryId)?.title || 'Kent Repertory';
+  }, [repertories, selectedRepertoryId]);
 
   // 1. Hydrate Repertories, Remedies & Polar Pairs from Local-First Storage
   useEffect(() => {
@@ -334,6 +341,9 @@ export const RepertoryContainer: React.FC = () => {
 
   return (
     <div className="space-y-6">
+      {/* Active Patient Session Banner (Homepath Zomeo Parity) */}
+      <ActivePatientBanner onOpenSaveModal={() => setIsSaveModalOpen(true)} />
+
       {/* 43+ Repertories Header Selector */}
       <RepertorySelector
         repertories={repertories}
@@ -379,6 +389,7 @@ export const RepertoryContainer: React.FC = () => {
             onSetWeight={(id, w) => dispatch(setRubricWeight({ rubricId: id, weight: w }))}
             onToggleEliminating={(id) => dispatch(toggleEliminating(id))}
             onClearClipboard={() => dispatch(clearClipboard())}
+            onSaveToCase={() => setIsSaveModalOpen(true)}
           />
 
           <FilterToolbar
@@ -435,6 +446,19 @@ export const RepertoryContainer: React.FC = () => {
       <RemedyDetailDrawer
         remedy={selectedRemedy}
         onClose={() => dispatch(setSelectedRemedyId(null))}
+      />
+
+      {/* Save Totality to Patient Case Modal (Homepath Zomeo Parity) */}
+      <SaveToPatientCaseModal
+        open={isSaveModalOpen}
+        onClose={() => setIsSaveModalOpen(false)}
+        repertoryId={selectedRepertoryId}
+        repertoryName={activeRepertoryName}
+        activeRubrics={activeRubrics}
+        rankedRemedies={effectiveComputeOutput.rankedRemedies}
+        scoringModel={scoringModel}
+        filters={filters}
+        polarityOutput={polarityOutput}
       />
     </div>
   );

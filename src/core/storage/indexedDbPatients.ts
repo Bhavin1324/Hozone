@@ -5,6 +5,7 @@ import type {
   Prescription,
   Appointment,
   PatientStatus,
+  CaseRepertorialAnalysis,
 } from '@/features/patients/types';
 
 export async function getLocalPatients(): Promise<Patient[]> {
@@ -86,4 +87,30 @@ export async function saveLocalAppointment(appointment: Appointment): Promise<Ap
   const db = await getDb();
   await db.put('appointments', appointment);
   return appointment;
+}
+
+export async function getLocalCaseAnalyses(patientId: string): Promise<CaseRepertorialAnalysis[]> {
+  const db = await getDb();
+  if (!db.objectStoreNames.contains('case_analyses')) return [];
+  const list = await db.getAllFromIndex('case_analyses', 'byPatient', patientId);
+  return list.sort(
+    (a, b) => new Date(b.analysisDate).getTime() - new Date(a.analysisDate).getTime()
+  );
+}
+
+export async function saveLocalCaseAnalysis(
+  analysis: CaseRepertorialAnalysis
+): Promise<CaseRepertorialAnalysis> {
+  const db = await getDb();
+  if (db.objectStoreNames.contains('case_analyses')) {
+    await db.put('case_analyses', analysis);
+  }
+  return analysis;
+}
+
+export async function deleteLocalCaseAnalysis(id: string): Promise<void> {
+  const db = await getDb();
+  if (db.objectStoreNames.contains('case_analyses')) {
+    await db.delete('case_analyses', id);
+  }
 }

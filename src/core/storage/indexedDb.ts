@@ -29,6 +29,7 @@ import type {
   Consultation,
   Prescription,
   Appointment,
+  CaseRepertorialAnalysis,
 } from '@/features/patients/types';
 import type {
   SpecialtyRepertory,
@@ -184,10 +185,19 @@ export interface HozoneDbSchema extends DBSchema {
     value: VeterinaryCase;
     indexes: { bySpecies: string; byRemedy: string };
   };
+  case_analyses: {
+    key: string;
+    value: CaseRepertorialAnalysis;
+    indexes: {
+      byPatient: string;
+      byConsultation: string;
+      byDate: string;
+    };
+  };
 }
 
 const DB_NAME = 'hozone_clinical_db';
-const DB_VERSION = 11;
+const DB_VERSION = 12;
 
 let dbPromise: Promise<IDBPDatabase<HozoneDbSchema>> | null = null;
 
@@ -332,6 +342,13 @@ export async function getDb(): Promise<IDBPDatabase<HozoneDbSchema>> {
           if (!rubStore.indexNames.contains('byParent')) {
             rubStore.createIndex('byParent', 'parentId');
           }
+        }
+        // v12 Store: Patient Repertorial Totality & Case Analyses (Zomeo Parity)
+        if (!db.objectStoreNames.contains('case_analyses')) {
+          const caStore = db.createObjectStore('case_analyses', { keyPath: 'id' });
+          caStore.createIndex('byPatient', 'patientId');
+          caStore.createIndex('byConsultation', 'consultationId');
+          caStore.createIndex('byDate', 'analysisDate');
         }
       },
     });

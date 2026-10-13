@@ -11,6 +11,9 @@ import patientReducer, {
   addPrescription,
   setActivePatientAppointments,
   addAppointment,
+  setActivePatientCaseAnalyses,
+  addCaseAnalysis,
+  removeCaseAnalysis,
   setSearchQuery,
   setFilterStatus,
   setCaseFileOpen,
@@ -18,7 +21,13 @@ import patientReducer, {
   setConsultationModalOpen,
   type PatientState,
 } from '../slices/patientSlice';
-import type { Patient, Consultation, Prescription, Appointment } from '@/features/patients/types';
+import type {
+  Patient,
+  Consultation,
+  Prescription,
+  Appointment,
+  CaseRepertorialAnalysis,
+} from '@/features/patients/types';
 
 const mockPatient: Patient = {
   id: 'test-p1',
@@ -71,6 +80,35 @@ const mockAppointment: Appointment = {
   updatedAt: '2026-01-15T10:00:00Z',
 };
 
+const mockCaseAnalysis: CaseRepertorialAnalysis = {
+  id: 'test-ca1',
+  patientId: 'test-p1',
+  title: 'Acute Migraine Totality',
+  analysisDate: '2026-01-15T10:00:00Z',
+  repertoryId: 'rep-kent-en',
+  repertoryName: 'Kent Repertory',
+  scoringModel: 'coverage_first',
+  rubrics: [
+    {
+      rubricId: 'head-pain-right-side',
+      fullPath: 'HEAD - PAIN - right side',
+      chapterName: 'HEAD',
+      weight: 1,
+      isEliminating: false,
+    },
+  ],
+  rankedRemedies: [
+    {
+      remedyId: 'rem-sang',
+      abbreviation: 'sang.',
+      fullName: 'Sanguinaria',
+      coverageCount: 1,
+      totalScore: 3,
+      rubricGrades: { 'head-pain-right-side': 3 },
+    },
+  ],
+};
+
 describe('Patient Slice Reducers', () => {
   const initial: PatientState = {
     patients: [],
@@ -78,6 +116,7 @@ describe('Patient Slice Reducers', () => {
     activePatientConsultations: [],
     activePatientPrescriptions: [],
     activePatientAppointments: [],
+    activePatientCaseAnalyses: [],
     searchQuery: '',
     filterStatus: 'All',
     isCaseFileOpen: false,
@@ -109,13 +148,16 @@ describe('Patient Slice Reducers', () => {
     state = patientReducer(state, setActivePatientConsultations([mockConsultation]));
     state = patientReducer(state, setActivePatientPrescriptions([mockPrescription]));
     state = patientReducer(state, setActivePatientAppointments([mockAppointment]));
+    state = patientReducer(state, setActivePatientCaseAnalyses([mockCaseAnalysis]));
     expect(state.activePatientConsultations).toHaveLength(1);
     expect(state.activePatientPrescriptions).toHaveLength(1);
     expect(state.activePatientAppointments).toHaveLength(1);
+    expect(state.activePatientCaseAnalyses).toHaveLength(1);
 
     state = patientReducer(state, clearActivePatient());
     expect(state.activePatient).toBeNull();
     expect(state.activePatientConsultations).toHaveLength(0);
+    expect(state.activePatientCaseAnalyses).toHaveLength(0);
   });
 
   it('adds consultation, prescription, and appointment', () => {
@@ -127,6 +169,25 @@ describe('Patient Slice Reducers', () => {
 
     state = patientReducer(state, addAppointment(mockAppointment));
     expect(state.activePatientAppointments).toHaveLength(1);
+  });
+
+  it('manages active patient repertorial case analyses totality', () => {
+    let state = patientReducer(initial, setActivePatientCaseAnalyses([mockCaseAnalysis]));
+    expect(state.activePatientCaseAnalyses).toHaveLength(1);
+    expect(state.activePatientCaseAnalyses[0].id).toBe('test-ca1');
+
+    const secondAnalysis: CaseRepertorialAnalysis = {
+      ...mockCaseAnalysis,
+      id: 'test-ca2',
+      title: 'Second Analysis',
+    };
+    state = patientReducer(state, addCaseAnalysis(secondAnalysis));
+    expect(state.activePatientCaseAnalyses).toHaveLength(2);
+    expect(state.activePatientCaseAnalyses[0].id).toBe('test-ca2');
+
+    state = patientReducer(state, removeCaseAnalysis('test-ca1'));
+    expect(state.activePatientCaseAnalyses).toHaveLength(1);
+    expect(state.activePatientCaseAnalyses[0].id).toBe('test-ca2');
   });
 
   it('updates filters and modal states', () => {

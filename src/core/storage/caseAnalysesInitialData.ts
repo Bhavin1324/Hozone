@@ -1,0 +1,95 @@
+import type { CaseRepertorialAnalysis } from '@/features/patients/types';
+
+export const INITIAL_CASE_ANALYSES: CaseRepertorialAnalysis[] = [
+  {
+    id: 'ca111111-1111-4111-8111-111111111111',
+    patientId: 'a1111111-1111-4111-8111-111111111111',
+    consultationId: 'b1111111-1111-4111-8111-111111111111',
+    title: 'Initial Intake: Right Hemicrania Totality',
+    analysisDate: '2026-01-15T10:00:00Z',
+    repertoryId: 'rep-kent',
+    repertoryName: "Kent's Repertory of Homeopathic Materia Medica",
+    scoringModel: 'coverage_first',
+    rubrics: [
+      {
+        rubricId: 'head-pain-right-side',
+        path: 'HEAD - PAIN - right side',
+        fullPath: 'HEAD > PAIN > right side',
+        chapterName: 'Head',
+        weight: 3,
+        isEliminating: false,
+        remedyCount: 42,
+      },
+      {
+        rubricId: 'head-pain-sun-agg',
+        path: 'HEAD - PAIN - sun, from exposure to',
+        fullPath: 'HEAD > PAIN > sun, from exposure to',
+        chapterName: 'Head',
+        weight: 2,
+        isEliminating: false,
+        remedyCount: 18,
+      },
+      {
+        rubricId: 'stomach-nausea-headache-during',
+        path: 'STOMACH - NAUSEA - headache, during',
+        fullPath: 'STOMACH > NAUSEA > headache, during',
+        chapterName: 'Stomach',
+        weight: 3,
+        isEliminating: false,
+        remedyCount: 26,
+      },
+    ],
+    rankedRemedies: [
+      {
+        remedyId: 'rem-sang',
+        abbreviation: 'Sang.',
+        fullName: 'Sanguinaria Canadensis',
+        coverageCount: 3,
+        totalScore: 9,
+        rubricGrades: {
+          'head-pain-right-side': 3,
+          'head-pain-sun-agg': 3,
+          'stomach-nausea-headache-during': 3,
+        },
+      },
+      {
+        remedyId: 'rem-bell',
+        abbreviation: 'Bell.',
+        fullName: 'Belladonna',
+        coverageCount: 3,
+        totalScore: 8,
+        rubricGrades: {
+          'head-pain-right-side': 3,
+          'head-pain-sun-agg': 3,
+          'stomach-nausea-headache-during': 2,
+        },
+      },
+      {
+        remedyId: 'rem-nat-m',
+        abbreviation: 'Nat-m.',
+        fullName: 'Natrum Muriaticum',
+        coverageCount: 3,
+        totalScore: 7,
+        rubricGrades: {
+          'head-pain-right-side': 2,
+          'head-pain-sun-agg': 3,
+          'stomach-nausea-headache-during': 2,
+        },
+      },
+      {
+        remedyId: 'rem-iris',
+        abbreviation: 'Iris',
+        fullName: 'Iris Versicolor',
+        coverageCount: 2,
+        totalScore: 6,
+        rubricGrades: {
+          'head-pain-right-side': 3,
+          'stomach-nausea-headache-during': 3,
+        },
+      },
+    ],
+    notes: 'Classic right-sided migraine with gastric distress. Sanguinaria chosen over Belladonna due to periodicity and relief after sleep in a dark room.',
+    createdAt: '2026-01-15T10:05:00Z',
+    updatedAt: '2026-01-15T10:05:00Z',
+  },
+];
